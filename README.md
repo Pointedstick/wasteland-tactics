@@ -9,7 +9,7 @@ The rules are fundamentally simple to encourage fast play, yet combine together 
 
 
 # Building from source
-The Wasteland Tactics rules are written using LaTeX. To compile them into a PDF document, you will need a LaTeX app
+The Wasteland Tactics rules are written using LaTeX. To compile them into a PDF document, you will need a LaTeX app or compiler.
 
 
 # Policies, philosophy, and licensing
