@@ -8,7 +8,12 @@ Wasteland tactics is a tabletop wargame simulating the fast-paced randomness and
 The rules are fundamentally simple to encourage fast play, yet combine together in deep and interesting ways. The game can be played at any scale: a skirmish between ragtag bands of desperadoes will take under an hour to play, while a company-scale battle with hundreds of soldiers and a dozen monsters and war machines is feasible in under four hours.
 
 
-# Building from source
+# How to get it
+
+### Download the latest version
+[Click here](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.1-alpha/rules.pdf) to download the latest release of the rules in PDF form.
+
+### Build from source
 The Wasteland Tactics rules are written using LaTeX. To compile them into a PDF document, you will need a LaTeX app or compiler.
 
 
