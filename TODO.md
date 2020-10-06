@@ -4,6 +4,7 @@ Visuals/presentation:
 - Replace the page border with something nicer/more visually appropriate
 - Add some cool black-and-white line-art style illustrations on some of the pages
 - Fix page numbering
+- Add display of version number
 
 
 Rules:
