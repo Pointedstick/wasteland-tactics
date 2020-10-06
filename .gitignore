@@ -252,6 +252,7 @@ TSWLatexianTemp*
 
 # Kile
 *.backup
+*.kate-swp
 
 # gummi
 .*.swp
