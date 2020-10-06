@@ -1,7 +1,3 @@
-# wasteland-tactics
-A simple yet deep tabletop wargame
-
-
 # The game
 Wasteland tactics is a tabletop wargame simulating the fast-paced randomness and tactical decision-making of a real battlefield.
 
