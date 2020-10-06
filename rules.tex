@@ -1,0 +1,590 @@
+% Global formatting
+% ===============
+
+% Be a book with 12 pt font
+% 'oneside' avoids blank pages after chapters
+\documentclass[12pt, oneside]{book}
+
+% It's in English with UTF8 encoding
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Use sans serif fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Use more normal-ish margins
+\usepackage[margin=0.7in]{geometry}
+
+% Use two columns
+\usepackage{multicol}
+
+% Add extra space between paragraphs
+\parskip = 0.4\baselineskip
+
+% ...but not so much after sections and subsections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{1.3em}{-\parskip}
+\titlespacing{\subsection}{0pt}{0em}{-\parskip}
+
+% Make subsubsections live on the same line as the text
+\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Reduce the huge amount of space before chapter titles
+\titleformat{\chapter}[display]   
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}   
+\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]
+
+% Be abe to reduce list padding
+\usepackage{enumitem}
+\setlist[itemize]{nosep}
+\setlist[enumerate]{nosep}
+
+% Add a page border
+% TODO: Find a better one
+\usepackage{wallpaper}
+\CenterWallPaper{1}{page_border_wood.jpg}
+
+
+
+
+% Content
+% =======
+
+\title{Wasteland Tactics}
+\author{Nate Graham}
+\date{October 2020}
+
+\begin{document}
+\begin{multicols}{2}
+
+\chapter*{Playing the game}
+
+\section*{Step 1: Choose the game size and opposing forces}
+It is considered sportsmanlike to build a balanced force rather than optimizing it to fight any particular enemy.
+
+For a \textbf{small patrol-sized game}, each player has 100 points to build a Battle Group consisting of one Command unit with the Leadership rule and any number of models from any other unit, except for those with the Vehicle/Monster rule--which are not used in games of this size. In games of this size, each model fights individually as a separate unit and all units with no suppression markers on them are scoring units.
+
+For a \textbf{medium platoon-sized game}, each player has 1000 points to build a Battle Group consisting of 1-2 Command units, 3-6 Troops units, 0-2 Spearhead units, 0-2 Fast units, 0-2 Heavy units, and 0-1 Transport unit for every non-Vehicle/Monster unit taken. In games of this size and above, Troops and Spearhead units with no suppression markers on them are scoring units.
+
+For a \textbf{large company-sized game}, each player has 2000 points or more to build one or more Battle Groups, each one chosen like in the medium platoon-sized sized game.
+
+
+
+
+\section*{Step 2: Choose the mission}
+Choose one of the following missions, or roll a die to randomly select one. In games where one player is designated the attacker or defender, all other players share the same pool of points to build their Battle Groups.
+
+\subsubsection*{1. Ambush:} Designate one player to be the defender, whose deployment zone is a 12'' wide strip extending from the center of the battlefield to one of the far edges. Every one of the attackers’ units gains the Ambush rule and must deploy in ambush rather than normally. The defender attempts to move units off the table edge opposite their initial deployment zone and wins a victory if more than half of his or her units are evacuated in this manner. Otherwise, the attackers share victory.
+
+\subsubsection*{2. Blitz:} Designate one player to be the defender. An attacking player is the winner if they have three scoring units entirely within the defender's deployment zone at the end of a round. The defender wins once no attacking players have any scoring units remaining.
+
+\subsubsection*{3. Break the stalemate:} Divide the board into 24'' x 24'' squares. The first player to have at least one scoring unit and no enemy scoring units in more than half of the total number of squares at the end of a round has achieved victory.
+
+\subsubsection*{4. Critical objective:} Agree upon a single piece of terrain not within any player's deployment zone to be the critical objective that must be controlled at all costs. The winner is the first player to have at least 15 models from at least two scoring units within 6" of the objective and no enemy models within that same distance at the end of two consecutive rounds.
+
+\subsubsection*{5. Salvage:} Place five objective markers on the battlefield, each not within any player’s deployment zone and at least 6'' away from other objective markers. Controlling an objective marker requires having at least one scoring unit with all models within 6'' of it, and no enemy models within this distance. The winner is the player that controls the most objective markers at the end of 8 rounds.
+
+\subsubsection*{6. Evacuation:} Designate one player to be the defender and agree upon one piece of terrain not within any player's deployment zone to be the evacuation point. At the end of each round, each of the defender’s units that has the majority of its models within 6'' of the evacuation point unit is removed and yields triple its current (not original) cost in point to the defenders. All other players score points by destroying the defender's units; each completely destroyed unit is worth its cost in points. The player with the most points at the end of the game is the winner.
+
+\subsubsection*{7. Hold at all costs:} Designate one player to be the defender, whose deployment zone is a 24'' circle at the center of the battlefield. Other players are the attackers. The defender wins if he or she has any scoring units remaining at the end of 8 rounds. Otherwise, the attackers win.
+
+\subsubsection*{8. Rescue:} Agree to place ten numbered counters face down each not within any player’s deployment zone and at least 6'' away from other objective markers, then roll a die. The counter showing the rolled number is a key individual in need of rescue (or re-capture). At the beginning of a round, if any player has models in a scoring unit touching the counter, with no models from enemy scoring units also touching it, it moves with that unit. The first player to get the counter to touch the table edge in their deployment zone wins.
+
+\subsubsection*{9. Sabotage:} Designate one player to be the defender and agree upon one large building or structure within that player’s deployment zone to be a critical facility or piece of infrastructure. Unlike other buildings, it can only be destroyed if one or more of the attacker’s scoring units (who are all assumed to have been issued with demolition charges) have all models within 6'' of it at the end of two consecutive rounds. The defender wins if it is still intact at the end of the game; otherwise, the attackers win.
+
+\subsubsection*{10. Total annihilation:} After 8 rounds, each enemy unit destroyed is worth its cost in points, while each unit lost subtracts its cost in points. The player with the most points wins.
+
+
+
+
+\section*{Step 3: Place terrain}
+The game may be played anywhere, on any surface of at least 4 square feet, but 6x4 is better. Players take turns placing terrain pieces until a satisfactory battlefield has been assembled that supports mission type, and each one-square-foot area includes at least one large line-of-sight blocking piece of terrain (though even more than this is better!). Players should come to a mutual agreement regarding the classification of the terrain.
+
+
+
+
+\section*{Step 4: Deploy your forces}
+Unless the mission specifies otherwise, each player’s deployment zone is a 12'' strip emanating from one of the longer board edges. During deployment, every unit must be placed farther than 24" away from the closest enemy unit.
+
+In missions with an attacker and a defender, the attackers first deploy their Battle Groups, followed by the defender.
+
+Otherwise, each player rolls for initiative (see the next section) and the player with the lowest number deploys their Battle Groups first. Then the player with the next highest initiative value places deploys their battle groups, and so on.
+
+
+
+
+\section*{Step 5: Start the game}
+
+\subsection*{Phase 1: Determine initiative}
+
+At the beginning of every round, each player rolls a die, applying the following modifiers:
+\begin{itemize}
+    \item +2 to any player who is an attacker in a mission with attackers and a defender.
+    \item +2 to the player whose Battle Groups have the smallest total number of units.
+\end{itemize}
+
+The player with the highest number has the Initiative for this round.
+
+
+\subsection*{Phase 2: Activate units}
+
+The player with the Initiative selects a unit to activate and decides upon two actions for that unit to take, subject to the following conditions:
+
+\begin{enumerate}
+    \item A player must activate Fast and Transport units first, and must activate Heavy units last.
+    \item Units with one Suppression marker only get one action, not two.
+    \item Units with two Suppression markers gets no actions and cannot be activated at all.
+\end{enumerate}
+
+The unit then performs its actions. If the first action makes the second action impossible (e.g. a unit that uses a Shoot action to destroy an enemy unit that it was preparing to charge with a Fight action), the second action is wasted.
+After the unit has performed its actions, the player who rolled the next highest initiative value does the same, and so on. Once all players have activated one unit, the player with the Initiative then activates a second, and so on, until all players have activated all of their units that are eligible for activation.
+
+
+\subsection*{Phase 3: Resolve morale effects}
+
+After all units on the table have been activated, each unit with any Suppression markers makes a Will roll; if the roll passes, the unit loses one Suppression marker.
+
+After this roll, any unit that still has three or more Suppression markers is immediately destroyed! Its warriors panic and flee, are taken prisoner, or become disorganized to the point of combat ineffectiveness.
+
+Then, any unit with models in base contact with enemy models that lost more models during Fight actions than it killed during its own Fight actions against that unit (if applicable) must pass a Will roll or else make a Forced Move Action directly away from the enemy models that it is fighting.
+
+Next, any unit that failed any Life rolls during the current round must make a Will roll, with a -1 penalty if the unit has lost more than half its starting number of models. If the Will roll is failed, the unit gains a suppression marker.
+
+After morale effects have been resolved, play proceeds to the next round.
+
+\section*{Achieving victory}
+
+The game ends when one player has achieved the mission’s victory condition, or when that condition becomes impossible for any player to achieve. In this case, the game is a draw.
+
+
+
+
+\chapter*{Game Mechanics, Models, and Units}
+
+\section*{The golden rule}
+
+More specific rules override more general ones. If a dispute arises during the course of play, go with whichever option would be the coolest. If this cannot be immediately agreed upon, or if both options are lame, then settle the matter quickly with a game of rock-paper-scissors.
+
+
+
+
+\section*{Models}
+
+Your warriors are represented by painted models. A model's abilities are described by the following characteristics:
+\begin{itemize}
+    \item \textbf{Move:} Speed across the tabletop in inches.
+    \item \textbf{Will:} The die roll needed to perform in stressful situations and cast or resist sorcerous powers.
+    \item \textbf{Life:} The die roll needed to survive being hit by enemy attacks.
+    \item \textbf{Weapons:} The unit’s weapons.
+    \item \textbf{Special Rules:} Special rules permanently affecting all models in the unit.
+\end{itemize}
+
+% TODO: mention WYSIWYG or not?
+
+
+
+
+\section*{Units}
+
+A unit may consist of a single model, or multiple models acting as a team. Models in multi-model units must remain within 2'' of at least two other models in the unit (or only one, if the unit consists of only two models). If a unit has any models out of this range at the beginning of a round, it takes a Forced Move Action to move them back into range before determining initiative;
+
+Each unit belongs to a certain type, specified in its unit profile:
+
+\begin{itemize}
+    \item \textbf{Command:} the Battle Group’s leadership
+    \item \textbf{Troops:} regular infantry
+    \item \textbf{Spearhead:} the most elite troops
+    \item \textbf{Fast:} mounted flankers
+    \item \textbf{Heavy:} tanks, big guns, and heavy hitters
+\end{itemize}
+
+
+
+
+\section*{Rolling dice}
+
+During the game, models will be called upon to ``make a Will roll,'' ``make a Life roll,'' and so on. To do this, roll a ten-sided die (also known as a D10) and compare the number to the characteristic in question. For example, a model with a Will characteristic of 6+ will pass Will rolls on a roll of 6 or higher.
+
+If your D10s show the number 0 instead of 10, treat 0 as 10.
+
+For Shoot and Fight rolls, the die roll need to succeed is listed on the relevant weapon itself.
+
+Sometimes, modifiers such as ``+2 Life'' or ``-1 Shoot'' may be applied to the number rolled on the die, making the roll easier or more difficult to pass. Modifiers to die rolls always stack.
+
+If any die roll ever requires a roll of 1+ or less, the result is an automatic success; you may skip rolling. Likewise, any die roll requiring a roll of 11+ or higher is an automatic failure.
+
+If asked to roll a ``D5'', then roll a D10 and divide the number by 2, rounding up. Add modifiers after dividing. For example if rolling ``D5+2'' and the die shows a 9, the D5 roll is a 4, and adding 2 produces a final result of 6.
+
+When rolling dice to resolve the actions or effects on a whole unit, roll them all at once to save time. However if some models in the unit are affected by different conditions—for example using different weapons, attacking different targets, or struck by weapons with different damage values—the dice should be rolled separately.
+
+
+
+
+\section*{Visibility}
+
+For two units to be visible to one another, at least one model in each unit must be visible to at least one model in the other unit.
+
+A model is considered visible to another model if any part of its base, body, hull, head, or turrets can be seen from the other model's base, body, hull, head, or turrets. Ignore outstretched arms, antennae, gun barrels, wings, etc.
+
+Models in the same unit do not block visibility to one another, but models in other units do—friendly or enemy alike. Gaps between models in other units also block visibility. In essence, treat other units as solid blocks whose height is equal to the height of the tallest model.
+
+
+
+
+\section*{Measuring}
+
+Distances are measured in inches. When measuring the distance between two units, measure between the two closest models in those units.
+
+If a model includes a decorative base, measure distances to and from the closest point on the model's base. Otherwise, measure distances to and from the closest point on its body, hull, head, or turrets, ignoring protruding elements as before.
+
+
+
+
+
+
+\section*{Base contact}
+
+Models are in base contact if their bases are physically touching. If this is impossible because any of the models do have a base or are standing on elevated pieces of terrain, they count as being in base contact as long as they are as close to each other as physically possible and the higher model is not higher up than the other model is tall.
+
+
+
+
+\section*{Special unit rules}
+
+Special rules with a number at the end stack when combined. For example if a unit has the Bloodthirsty 1 rule and gains Bloodthirsty 2 from a Support model, it becomes Bloodthirsty 3.
+
+\subsubsection*{Acute Senses:} Models in this unit are equipped with night vision, scanning equipment, or especially keen natural senses. They ignore Limited Visibility penalties, and Scout or Ambush units may not be set up within 18'' of any of its models. Additionally, units that have taken a Defend action do not receive their bonus of +1 Life when fired upon by models in this unit.
+
+\subsubsection*{Ambush:} This unit is specialized for sneak attacks and may optionally not be deployed at the start of the game. Thereafter, any time when it is your turn to activate a unit, you may place this unit anywhere on the board farther than D10 inches away from any enemy models. Then the unit activates with one action.
+
+If any of the Ambushing unit’s models are Scouts or if any of their models arrive within 6'' of any models in a friendly Scouts unit, the unit does not need to be placed farther than D10 inches away from any enemy models.
+
+\subsubsection*{Bloodthirsty X:} Models in this unit are battle-hungry savages and gain a +X bonus to their Move characteristics and Fight rolls during a Fight action in which any of them move into base contact with enemy models and none were previously in base contact.
+
+\subsubsection*{Bodyguards X:} Models in this unit are assigned to protect high-value troops or are treated as cannon fodder! They no longer block visibility at all, and when a friendly non-Vehicle/Monster model in another unit that is in base contact with any models from this unit receive any hits from shooting or melee combat, roll a die for each hit before making Life rolls. On a roll of X or greater, one model from the \textit{Bodyguards} unit is destroyed, and the hit against the other unit is ignored.
+
+\subsubsection*{Caster X:} This model is a master of arcane powers and may make up to X number of Cast actions per round, and attempt to nullify X enemy psychic powers. All Psychic models know the following powers automatically:
+
+\begin{itemize}
+    \item \textbf{Psychic Fury:} The target unit is hit with a weapon with the characteristics [R20, A1, 6+ D10, Deadly 2]
+    \item \textbf{War Blessing:} The target unit receives a bonus of +1 Shoot and +1 Fight during its next action.
+\end{itemize}
+
+\subsubsection*{Fearless:} Models in this unit are especially crazed or zealous, and have no regard for their own safety! They ignore Haunted penalties and may not take Defend actions. Whenever the unit would receive a Suppression marker or make a Forced Move Action, instead one model in the unit of its owner’s choice is destroyed. If all models in the unit are Tough, instead one model loses a wound.
+
+\subsubsection*{Hardened:} Models in this unit are armored against anti-personnel weapons and suffer no penalties on their Life rolls against weapons with a Damage value of 1 or 2.
+
+\subsubsection*{Jump/Flying:} Models in this unit are capable of airborne movement. They treat all terrain as Clear Terrain, and measure movement distances in a straight line between the starting and ending locations, ignoring all intervening terrain and obstructions.
+
+If the rule is called ``Flying'', then the models are additionally always considered visible irrespective of any terrain, derive no benefits from Concealment or Cover, and they do not block visibility to other units. Enemy models may touch or move over their stand or base as if it were not there.
+
+\subsubsection*{Leadership X:} This model is a commander or important officer capable of inspiring your forces. You gain +X on Initiative rolls, and this model may only be targeted with shooting attacks when it is the closest visible target to the firing unit, unless it has the ``Tough 6'' (or more) rule or is more than 3'' away from any other enemy unit.
+
+In addition, this model may issue up to X number of Commands per round, at any time, to units in the same Battle Group that have at least one model within 6''. The model chooses a Command from the following list and makes a Will roll; if the roll passes, the command is issued.
+
+\begin{itemize}
+    \item \textbf{Push forward!} The unit may move an additional D5 inches during its next Move action
+    \item \textbf{Strike harder!} You may may re-roll up to D5 dice during the unit’s next Shoot or Fight action.
+    \item \textbf{Get back into the fight!} The unit immediately loses a Suppression marker.
+    \item \textbf{Seize the initiative!} The unit may be activated next even if it otherwise could not be.
+\end{itemize}
+
+The same command may not be issued more than once to the same unit during a battle round.
+
+\subsubsection*{Medic/Repair X:} Models in this unit benefit from the presence of a medic or mechanic. At the end of each round, units with this rule may roll a die; on a roll of X or greater, one destroyed model from the model’s own unit or a different friendly unit with any models in base contact is returned to the battlefield with one wound. Alternatively, for Tough models that have lost at least one wound, one wound is restored). If the rule is called ``Medic,'' it can only be used on non-Vehicle models; if it is called ``Repair,'' it can only be used on Vehicle models.
+
+\subsubsection*{Open:} Models in this unit are especially vulnerable to blast weapons. Area Effect and Spray weapon attacks become Deadly 2 against these models (if already Deadly, double the number) and immediately make an extra free attack against all embarked units.
+
+Units embarked on an Open model may issue Commands, take Shoot or Cast actions (measure distances from the closest point on the transport), and take Fight actions after disembarking as long as the Open model took fewer than two Move actions during this round.
+
+\subsubsection*{Price of Failure X:} Models in this unit keep order using the harshest possible methods! When a friendly unit with any models within 6'' of this model fails a Will roll for morale, X number of the closest models from that unit are destroyed. The unit is then considered to have passed the Will roll.
+
+\subsubsection*{Reach:} Models in this unit are especially good at bringing their weapons to bear against the enemy in hand-to-hand combat. In a Fight action, all models in this unit may strike irrespective of how far away they are from enemy models.
+
+\subsubsection*{Scouts X:} This unit is specialized for infiltration and spotting. You gain +X on Initiative rolls, and this unit may optionally be deployed last anywhere on the battlefield that leaves them out of sight of all enemy models.
+
+In addition, this unit can provide visibility for friendly Indirect Fire weapons even if it is not a Spearhead unit, and when it does so, they do not suffer a penalty on their Shoot rolls.
+
+\subsubsection*{Strider X:} Models in this unit are especially adept at navigating challenging locations and treat the terrain types listed in X as Clear Terrain.
+
+\subsubsection*{Stealth X:} This unit is especially good at concealing itself. Models firing at it suffer an additional penalty of -X Shoot when it is in an area of Concealment or Cover.
+
+\subsubsection*{Stubborn X:} Models in this unit are iron-willed and can fight through the most stressful situations undaunted. This unit counts its number of Suppression markers as X lower than it really is.
+
+\subsubsection*{Support X:} This model lends support to comrades. Friendly units with all of their models within 12'' of this model and at least one model in base contact with it gain all effects and special rules listed in X.
+
+\subsubsection*{Tough X:} Models in this unit are especially huge and durable. They take up X spaces in Transport models, and must fail X Life rolls before being destroyed. Keep track of how many ``wounds'' each model has remaining with a die.
+
+When a unit including multiple Tough units makes Life rolls, each Tough model in a unit must be allocated successive Life rolls until it is destroyed before Life rolls may be allocated to other Tough models in the unit.
+
+\subsubsection*{Transport X:} This model is a troop transport and may carry up to X other friendly models. It may contain models from multiple units, and units may begin the game embarked on it.
+
+A unit may embark on a Transport model by using a Move action to place the of its models within 3'' of it. Embarked units are removed from the battlefield, cannot be interacted with, and may take no action except to disembark.
+
+Embarked units disembark using a Move action: instead of moving normally, the unit’s models are placed on the battlefield within 3'' of this model. Disembarking units may may not take Fight actions during the current round. If this model is destroyed, embarked units automatically disembark and gain a Suppression marker.
+
+\subsubsection*{Vehicle/Monster X:} This model is a vehicle or monster. It never takes Morale tests, makes Forced Move Actions, or accumulates Suppression markers. It may attack with as many of its weapons as it has remaining wounds during a Shoot or Fight action, and may fire Heavy weapons after moving, but visibility for each ranged weapon must be traced from the weapon's own barrel/emitter/etc. Also, the model's Move value is limited to its number of remaining wounds and it may turn or rotate only once (at any point) per Move or Fight action, may not take Defend actions, cannot embark on transports, and never gains life bonuses from Cover.
+
+A Vehicle/Monster model and enemy models in base contact with it may use Move actions to move away from one another without requiring Will rolls, and may take Shoot actions against one another—however they count as moving if they do so, and cannot use weapons with the Area Effect special rule (Spray is permissible though). If enemy models fire upon a Vehicle/Monster model while any of their other models are in base contact with it, only die rolls of 1 will hit their models instead.
+
+When a Vehicle/Monster model makes a Fight action that would bring it into contact with a non-Vehicle/Monster unit that it is not currently in contact with, then after it moves, each target unit must pass a Will roll or else take a Forced Move Action directly away from the Vehicle/Monster model. 
+
+Finally, when a Vehicle/Monster is destroyed, do not remove it; it becomes a wreck/corpse that counts as visibility-blocking Difficult Terrain. And if the name of the rule ends with a number, roll a die when when the model is destroyed; on a roll of X or greater, it explodes or lashes out with its death throes and every model even partially within 4" (including any embarked models) must pass a Life roll with a -1 penalty or else be destroyed. Then remove the model from the table.
+
+\subsubsection*{Vulnerable X:} This model suffers a -X penalty on Life rolls made against melee attacks by models in base contact, shooting attacks made by indirect fire weapons, and shooting attacks by units with a majority of models behind an imaginary line drawn side-to-side through its center.
+
+
+
+
+\chapter*{Actions}
+
+\section*{Move}
+Each model in the unit may move on the battlefield a number of inches up to its Move value, and rotate any number of times in any direction.
+
+Vertical pieces of terrain such as walls, fences, and ledges can only be ascended and descended if all of the models in the unit are taller than the distance to be traversed (as before, do not count outstretched arms, wings, weapons, antennas, etc), and models must expend movement distance to do so.
+
+A unit may not use a Move action to pass through Impassible Terrain or other models, or gaps between enemy models, or come into base contact with enemy models. Models must end their Move action in a position where they can stand upright. 
+
+A unit must pass a Will roll if it wishes to use a Move action to move any of its models out of base contact with enemy models. If the roll is failed, the Move action is wasted.
+
+\subsubsection*{Forced Move Actions:} At various times, a unit may have to take a Forced Move Action. This means that the unit immediately makes a Move action in the direction indicated, outside of the normal sequence of activation and regardless of whether it had already activated or how many actions it has available. All models in the unit must move the full distance in a straight line, with no maneuvering or routing around obstacles.
+
+After completing the movement, the unit gains a suppression marker. However, if any of the unit's models cannot complete the movement because they would come into base contact with impassible terrain or any enemy models, the unit is destroyed; morale collapses after finding the retreat corridor blocked or filled with enemy forces!
+
+
+
+
+\section*{Shoot}
+A unit with none of its models in base contact with enemy models and armed with at least one weapon with a range greater than R0 may fire its ranged weapons at one or more visible enemy units. The unit’s models may shoot at different target units.
+
+Each model in the unit that can see at least one model in the enemy unit it is targeting fires one of its ranged weapons that is within range.
+
+If the targeted unit is benefiting from the effects of an area of Concealment or Cover, but some models in the unit are nonetheless completely visible, the shooting unit may optionally focus on only the fully visible models. In this case, against this attack, those models lose their Concealment or Cover bonuses, but all other models are no longer considered visible at all.
+
+For each model able to shoot, choose one of the its ranged weapons and make a number of Shoot rolls equal to the weapon’s Attacks characteristic. For each successful Shoot roll, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon. For each failed Life roll, a visible model in the unit of its owner’s choice is destroyed.
+
+Only models in the targeted unit that are visible to one or more firing models may be removed as casualties; if more kills would be scored than there are visible enemy models, the excess damage is lost.
+
+If any models in the targeted unit are in base contact with models from any of your units, each failed Shoot roll is resolved as a hit against one of your units (the other player decides which!).
+
+
+
+
+\section*{Fight}
+A unit armed with at least one weapon with a range of R0 may take a Fight action to attack enemy units in hand-to-hand combat.
+
+First, the unit designates one or more enemy units within its movement range as charge targets.
+
+Each targeted enemy unit which has one or fewer suppression markers and is not currently in base contact with any of your models may then optionally gain an additional suppression marker and make a Will roll. If the roll is passed, it immediately takes a free Shoot action against the unit charging at it. During this free Shoot action, all of its ranged weapons are automatically considered to be in range.
+
+After this has been resolved, the charging unit makes a free Move action. During this free Move action, all of its models are required to move in a straight line directly toward the closest enemy model in a targeted unit, and at least one of the unit's models must end up in base contact with at least one model in each of the designated target units.
+
+To strike blows in the ensuing melee combat, a model must be in base contact with either an enemy model, or a friendly model that is in base contact with an enemy model.
+
+Each model able to strike blows targets the closest enemy unit with models in base contact. If this is unclear, or all valid targets are equidistant, you may choose the target unit. Then choose one of the model's melee weapons and make a number of Fight rolls equal to that weapon’s Attacks characteristic, subject to the following modifiers:
+
+\begin{itemize}
+ \item +1 bonus for each suppression marker on the enemy unit
+ \item +1 bonus if the model's unit outnumbers the target unit 2:1 or more
+ \item +2 bonus if the model's unit outnumbers the target unit 3:1 or more
+\end{itemize}
+
+For each successful Fight roll, the targeted unit makes a Life roll with a penalty equal to the Damage characteristic of the melee weapon. For each failed Life roll, a model of its owner’s choice is destroyed, starting with models not in base contact with enemy models.
+
+
+
+
+\section*{Defend}
+A unit may take a Defend action as its first action, after which it cannot take a Move, Fight, or Defend action as its second action. For the duration of the current round, the unit gains a bonus of +1 to its Life rolls and +1 to its Will rolls for all purposes except Cast actions or resisting enemy Cast actions.
+
+Units with any suppression markers on them always count as taking a Defend action.
+
+To make it easier to see that the unit has taken a Defend action, you may turn one of its models on its side.
+
+
+
+
+\section*{Cast}
+A unit may take a Cast action to attempt to manifest a psychic power if at least one of its models has the Caster special rule and none of its models are in base contact with enemy models.
+
+Each Caster model in the unit chooses a psychic power that it knows and a target unit (each model may target a different unit) and makes a Will roll. If the roll passes, a single enemy Caster model within 24" (chosen by its owner) may attempt to nullify the power by immediately making a Will roll of its own. If the roll passes, and the number rolled is higher than the number rolled by the casting model, the power is nullified and has no effect. Otherwise, the casting model succeeds at casting the power, with effects detailed in the power's description.
+
+For all dice rolls related to psychic powers—both casting and nullifying—a roll of 1 will damage the model as though firing a weapon with the Unstable rule.
+
+
+
+
+\chapter*{Weapons}
+
+Every model has one or more weapons, which have five characteristics, typically expressed with the following shorthand:
+
+\textbf{Pistol: R10 A1 5+ D1 [Assault]}
+
+\begin{itemize}
+    \item \textbf{R[number]:} The weapon’s range. A weapon with a Range of 0 is a melee weapon; otherwise, it is a ranged weapon.
+    \item \textbf{A[number]:} The weapon’s number of attacks. Roll this many dice per Shoot or Fight action when using this weapon.
+    \item \textbf{[number]+:} The weapon’s chance of hitting its target. When making a shoot or Fight action with this weapon, you must roll equal to or above this number to score a hit with each attack. ``Autohit'' means that no rolls are necessary; all of the weapon’s attacks automatically hit!
+    \item \textbf{D[number]:} The weapon’s damage. Subtract this number from Life rolls made by models struck with this weapon.
+    \item \textbf{[special rules]:} This weapon's special rules.
+\end{itemize}
+
+
+
+
+\section*{Special weapon rules}
+
+\subsubsection*{Area Effect/Spray:} This weapon inflicts damage over a wide area. It negates Shoot penalties from firing at units with Stealth or in areas of Concealment or Cover, but its number of attacks is reduced to the number of models in the target unit if it would be higher. If the rule is called ``Spray'', the weapon additionally negates Life bonuses from being in Cover or taking Defend actions.
+
+\subsubsection*{Assault:} This weapon can be used effectively on the move at close range. It may be used during a Fight action as though it were a melee weapon, and once per round, it may be fired for free at the end of a Move action, exactly as with a Shoot action.
+
+\subsubsection*{Critical:} This weapon is capable of dealing terrible damage with a lucky hit. If it would automatically hit, roll anyway. For each die that shows a 10, the target fails a life roll automatically.
+
+\subsubsection*{Deadly X:} This weapon is especially damaging and deals X ``wounds'' to Tough models. If a Deadly weapon would deal more wounds to a Tough model than it has remaining wounds, the excess damage is lost and not applied to any other models in the unit.
+
+\subsubsection*{Indirect Fire:} This weapon may suffer a -2 Shoot penalty to target units that are not visible to its firer but are visible to and have any models within 15'' of a friendly Spearhead unit.
+
+\subsubsection*{Heavy:} This weapon requires time to set up and cannot be fired if the wielding model (or a transport it is embarked on) moved at all during this round. However it negates Life bonuses from being in Cover.
+
+\subsubsection*{Slow:} This weapon is slow to reload and may only be used once per round.
+
+\subsubsection*{Sniper:} This weapon may be used to fire at models with the Leadership rule that are not the closest visible target. When the weapon scores any hits on multi-unit models, you may choose which models to allocate Life rolls to.
+
+\subsubsection*{Suppressive/Terrifying X:} This weapon's effects are intensely frightening. Once per activation (your choice as to when), units hit with this weapon must immediately pass a Will roll with a -X penalty or else gain a suppression marker. If the rule is named ``Terrifying'', the unit instead makes a Forced Move Action directly away from the firing unit if it fails its Will roll.
+
+If the unit is firing multiple Suppressive and/or Terrifying weapons at the same target, apply only the most severe effects, but increase the penalty on the target unit's Will roll by one for each additional Suppressive or Terrifying weapon in the firing unit.
+
+\subsubsection*{Unstable:} This weapon may explode! If it would automatically hit, roll anyway. For each die that shows a 1, the firing model fails a Life roll.
+
+
+
+
+\chapter*{Terrain and Cover}
+
+Before a game, the players should classify each area of terrain with the following characteristics. It is permissible for areas of terrain to have multiple classifications; For example a forest would offer both Difficult Terrain and also Concealment.
+
+
+
+
+\section*{Clear Terrain}
+\textit{For example: open fields, deserts, streets, areas of very sparse vegetation or rubble, hilltops}
+
+No barriers to movement or visibility. Clear Terrain is everything not otherwise classified, as well as horizontal gaps no wider than a model is tall or wide.
+
+
+
+
+\section*{Difficult Terrain}
+\textit{For example: rocky ground, ruins and other dense rubble-strewn areas, sandbag walls, forests, thick vegetation, streams and shallow rivers, cratered round, swamps}
+
+Units receive a penalty of -2 Move during Move actions that take any of their models into, out of, or through areas of Difficult Terrain. Units that move through multiple areas of Difficult Terrain use the worst penalties rather than combining them.
+
+
+
+
+\section*{Dangerous Terrain X}
+\textit{For example: minefields, quicksand}
+
+Roll a die for every model in a unit that moves into, out of, or through any Dangerous Terrain. For each roll of X+ (an appropriate default value of X is 9), one model is destroyed.
+
+
+
+
+\section*{Impassible Terrain}
+\textit{For example: lava floes, deep water, solid walls with no windows, cliffs and very steep slopes, pools of corrosive waste}
+
+Models may not move into or through Impassible Terrain. If they are forced to do so for any reason, they are immediately destroyed.
+
+
+
+
+\section*{Concealment}
+\textit{For example: tall grass, wooden ruins, sparse forests, scrap piles, fences, smoke}
+
+If a unit shoots at a target unit with a majority of its model inside or behind an area of Concealment, then the shooting unit suffers a -2 penalty on Shoot rolls. This does not apply to targets inside the same area of Concealment as the shooting unit, or to units inside an area of Concealment firing on targets outside of it.
+
+Shots cannot be traced through two areas of Concealment; the second one will block visibility to models behind (but not within) it, up to the height of the tallest element.
+
+
+
+
+\section*{Cover}
+\textit{For example: fortifications, metal or masonry ruins, rock piles, trenches, sandbag walls, being obscured by the top of a slope}
+
+Exactly like Concealment, but a single area blocks visibility to models behind it up to the height of the tallest element, and units inside it additionally gain a bonus of +1 to their Life rolls and +1 to their Will rolls for all purposes except Cast actions or resisting enemy Cast actions.
+
+
+\section*{Buildings and ruins}
+Intact buildings are treated as solid areas of impassible terrain.
+
+Ruins are treated as areas of Concealment or Cover, depending on the method of construction (lighter construction is Concealment, while heavier construction is Cover). Non-Vehicle/Monster models may spend movement distance to ascend and descend within ruins that are are modeled with multiple levels, even if they are shorter than the distance to be ascended or descended.
+
+
+
+
+
+\chapter*{Advanced Rules}
+These optional rules will add additional depth, randomness, and tactical considerations:
+
+
+
+
+\section*{Advantageous firing positions}
+When a unit takes a Shoot action targeting an enemy unit with more than 3 models whose ``footprint'' on the tabletop is at least twice as deep as it is wide from the perspective of the firing unit, it gains a +1 shoot bonus and the enemy unit receives a -1 Life penalty.
+
+Similarly, when a unit with more than 3 models takes a Shoot action, if it has a tabletop footprint that it at least twice as deep as it is wide from the perspective of the target unit, it gains a +1 Shoot bonus.
+
+If a unit's footprint is at all ambiguous, err on the side of applying no bonuses or penalties.
+
+
+
+
+\section*{Occupying buildings}
+Intact buildings can be occupied and are treated as stationary Transport models that cannot attack, with the following rules:
+
+\subsubsection*{Light building:} Life 5+, Open, Tough 10, Transport 10, Vehicle, becomes Ruins when destroyed
+
+\subsubsection*{Heavy or fortified building:} Life 3+, Open, Tough 10, Transport 10, Vehicle, becomes Ruins when destroyed
+
+Especially large buildings could instead have Transport 20 or higher.
+
+
+
+
+\section*{Battlefield conditions}
+Choose a suitably epic battlefield condition from the following list, or determine randomly by rolling a die:
+
+\subsubsection*{1-4 Normal conditions:} Play the game normally.
+
+\subsubsection*{5-6 Limited visibility:} Units that opt to move faster than 6'' during a Move or Fight action count as being inside Dangerous Terrain 9+, and every unit suffers a -1 Shoot penalty for each full 10'' separating the firing unit and its target.
+
+\subsubsection*{7 Rainy/swampy/muddy:} All areas of Open Terrain become Difficult Terrain. Areas that were already Difficult terrain reduce movement by 3.
+
+\subsubsection*{8 Haunted:} All models suffer a permanent -1 Will penalty.
+
+\subsubsection*{9 Corrosive atmosphere:} All models suffer a permanent -1 Life penalty.
+
+\subsubsection*{10 Dangerous ground:} Every time a unit enters a piece of terrain for the first time, roll a die. On a roll of 7+, that area of terrain is Dangerous Terrain 8 for the rest of the game. Mark it accordingly so nobody forgets.
+
+
+
+
+\section*{Advantages and disadvantages}
+Roll a die to determine your Battle Groups' advantages for this battle:
+\subsubsection*{1-2 No advantages:} Do not roll for Disadvantages either.
+\subsubsection*{3-4 Good intel:} You gain +10 on initiative rolls and your units suffer no Shoot penalties when firing at enemy units in Concealment or Cover.
+\subsubsection*{5-6 Cutting-edge equipment:} The Damage value of all of your units' weapons is increased by 1.
+\subsubsection*{7-8 Grizzled veterans:} All units gain the Stubborn 1 rule.
+\subsubsection*{9-10 Air support:} One per round at any time, you may designate an enemy unit anywhere on the battlefield. Its models immediately fail D5 Life rolls.
+
+...And then doll a die to determine your Battle Groups' disadvantages for this battle:
+
+\subsubsection*{1-2 Exhausted:} All units' Move and Will values are reduced by 1.
+\subsubsection*{3-4 Low ammunition:} Anytime a unit makes a shoot action, if half or more of the dice are failures, the unit's Shoot values are reduced by one for the rest of the game. This can happen multiple times!
+\subsubsection*{5-6 Terrible commander:} The unit with the highest Leadership has the value of its Leadership rule reduced to 0.
+\subsubsection*{7-8 Traitors:} One of the units in your army has defected to the enemy side! Roll a die for each of your units one at a time (you may choose the order) until the die shows a 1; that unit becomes a part of an enemy Battle Group!
+\subsubsection*{9-10 FUBAR:} Everything has gone wrong!
+
+\end{multicols}
+\end{document}
