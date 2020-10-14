@@ -1,4 +1,3 @@
-
 Visuals/presentation:
 - Add some cool art to the title page
 - Add some cool black-and-white line-art style illustrations on some of the pages
