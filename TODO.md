@@ -1,9 +1,8 @@
 
 Visuals/presentation:
-- Add a nice title page with some cool art on it
-- Replace the page border with something nicer/more visually appropriate
+- Add some cool art to the title page
 - Add some cool black-and-white line-art style illustrations on some of the pages
-- Add display of version number
+- Replace the page border with something nicer/more visually appropriate
 
 
 Missions:
