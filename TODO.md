@@ -8,7 +8,6 @@ Visuals/presentation:
 
 
 Rules:
-- Consider making non-vehicle/monster units pass a will roll to be able to split fire or shoot at a distant target
 - Expand Advanced Rules section as needed
 
 
