@@ -7,10 +7,6 @@ Visuals/presentation:
 - Add display of version number
 
 
-Rules:
-- Expand Advanced Rules section as needed
-
-
 Missions:
 - Review missions for balance
 
