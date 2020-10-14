@@ -11,7 +11,6 @@ Rules:
 - Consider making non-vehicle/monster units pass a will roll to be able to split fire or shoot at a distant target
 - Remove Air Support advantage and make it a leadership ability of various technologically advanced and well-organized factions
 - Clean up Advanced Rules section in general
-- Add advanced rules for elevation
 - Expand Advanced Rules section as needed
 
 
