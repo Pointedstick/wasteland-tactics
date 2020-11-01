@@ -275,3 +275,7 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Mac and Linux directory-specific settings files
+*.directory
+*.DS_STORE
