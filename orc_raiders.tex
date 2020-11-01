@@ -1,0 +1,949 @@
+% Be landscape
+\documentclass[landscape]{extarticle}
+
+% Use sans serif fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Use more normal-ish margins
+\usepackage[margin=0.4in]{geometry}
+
+% Don't number the pages
+\pagenumbering{gobble}
+
+% Use alternating row colors for the tables
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.95}
+\rowcolors{1}{white}{lightgray}
+
+% Define some fixed-width columns
+% Unit column
+\newcolumntype{U}{>{\arraybackslash}m{3cm}}
+% Weapons column
+\newcolumntype{W}{>{\arraybackslash}m{9.5cm}}
+% Special Rules column
+\newcolumntype{S}{>{\arraybackslash}m{7cm}}
+
+% Add extra space between paragraphs
+\parskip = 0.4\baselineskip
+
+% ...but not so much after sections and subsections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{1.3em}{-\parskip}
+\titlespacing{\subsection}{0pt}{0em}{-\parskip}
+
+% Make subsubsections live on the same line as the text
+\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Reduce the huge amount of space before chapter titles
+\titleformat{\chapter}[display]   
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}   
+\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]
+
+% Be abe to reduce list padding
+\usepackage{enumitem}
+\setlist[itemize]{nosep,leftmargin=*}
+\setlist[enumerate]{nosep,leftmargin=*}
+
+% Add a page border
+% TODO: Find a better one
+% \usepackage{wallpaper}
+% \CenterWallPaper{1}{page_border_wood.jpg}
+
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Orc Raiders}
+\author{Nate Graham}
+\date{\today\\ Version 0.0.3}
+
+\maketitle
+
+Orc Raiders are nasty, brutish pirates who revel in the thrill of battle, wielding crude yet effective melee weapons and firearms. Orcs lack finesse and suffer from poor organization, but can overwhelm their enemies with sheer weight of numbers and firepower.
+
+You might enjoy playing as the Orc Raiders if you like falling upon your enemies in a great monstrous horde, smashing things in brutal combat, firing wacky but deadly weapons, and rolling buckets of dice.
+
+\section*{Army-specific rules}
+
+\subsection*{New unit rules}
+
+\subsubsection*{Angry Mobs:} All units except for Goblin Herds gain a bonus of +1 Will for every full 5 models in the unit.
+
+\subsubsection*{Handy to Have Around:} Any non-vehicle unit unit with any models in base contact with any models from a Goblin Herd unit may destroy D5 models in the Goblin Herd unit to re-roll a single failed die roll. Each of those units may do this once per round at any time. If there are not D5 models left in the unit, the unit is destroyed and no re-roll is granted. There just weren't enough Goblins left to help out!
+
+Additionally, when a Goblin Herd unit enters an area of Dangerous Terrain, destroy 2D10 of its models, and then the area no longer counts as Dangerous Terrain.
+
+\subsection*{Special commands}
+\subsubsection*{Hit ‘em hard!:} The selected non-vehicle unit gains Bloodthirsty 2 during its next action.
+
+\subsubsection*{More bullets!:} The selected unit gains Suppressive 0 for one of its weapons in its next Shoot action. If any of its weapons already have the Suppressive or Terrifying rule, instead increase the number after the rule by 1 for all of them.
+
+
+\section*{Army variants}
+\subsection*{Brutal}
+\begin{itemize}
+    \item Flyboys, Brutes, and Dreadwalkers are Troops
+    \item May not take any units of Biker Boss, Goblin Herd, Guerillas, Raiders, Beast Herd, Bikers, Blasta-Copters, or Snazz-Buggies
+\end{itemize}
+
+\subsection*{Speedy}
+\begin{itemize}
+    \item Biker Boys, Blasta-Copters, and Snazz-Buggies are Troops
+    \item Everything deployed at the start of the game must be a Vehicle, embarked inside a vehicle, or have a Move value of 10 or higher
+\end{itemize}
+
+
+
+
+\pagebreak
+
+
+
+\begin{small}
+
+\section*{Command}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Big Boss
+&
+% Cost
+60 pts
+&
+% Move
+5
+&
+% Will
+5+
+&
+% Life
+4+
+&
+% Weapons
+\begin{itemize}
+    \item Boss guns: R16 A2 8+ D2 [Assault, Deadly 2]
+    \item Pick one:
+    \begin{itemize}
+        \item Huge boss chopper: R0 A4 2+ D4 [Deadly 2]
+        \item Powered boss weapons: R0 A2 3+ D6 [Deadly D5+1]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Leadership 2, Price of Failure 3, Tough 3, Support (Reach)
+
+
+\\
+
+
+% Unit
+Biker Boss 
+&
+% Cost
+100 pts
+&
+% Move
+12
+&
+% Will
+5+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Biker guns: R16 A4 8+ D1 [Assault]
+    \item Pick one:
+    \begin{itemize}
+        \item Huge boss chopper: R0 A4 2+ D4 [Deadly 2]
+        \item Powered boss weapons: R0 A2 3+ D6 [Deadly D5+1]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Leadership 2, Price of Failure 3, Tough 4, Support (Reach)
+
+
+\\
+
+
+% Unit
+Mech Boss 
+&
+% Cost
+60 pts
+&
+% Move
+5
+&
+% Will
+6+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
+    \item Brute chopper: R0 A2 3+ D1
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Leadership 1, Tough 2, Repair 6+
+
+
+\\
+
+
+% Unit
+Psycho Boss 
+&
+% Cost
+60 pts
+&
+% Move
+5
+&
+% Will
+4+
+&
+% Life
+5+
+&
+% Weapons
+Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+&
+% Special rules
+Bloodthirsty 1, Caster 1, Tough 2
+
+
+\\
+
+
+% Unit
+Sawbones Boss 
+&
+% Cost
+60 pts
+&
+% Move
+5
+&
+% Will
+6+
+&
+% Life
+5+
+&
+% Weapons
+Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+&
+% Special rules
+Bloodthirsty 1, Medic 5+, Tough 2
+
+
+\\
+
+
+% Unit
+Herder Boss 
+&
+% Cost
+40 pts
+&
+% Move
+5
+&
+% Will
+6+
+&
+% Life
+5+
+&
+% Weapons
+Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+&
+% Special rules
+Bloodthirsty 1, Price of Failure 3 (only for Goblin Herd and Beast Herd units) Tough 2, Support (+3 Will to Goblin Herd and beast Herd units)
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Spearhead}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Guerillas (5-15)
+&
+% Cost
+10 each
+&
+% Move
+6
+&
+% Will
+8+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Pistols: R8 A1 8+ D1, Assault
+    \item Choppers: R0 A1 4+ D1
+\item Busta bombs: R0 A1 4+ D5 Critical 10, Deadly D5, Slow, Unstable 2, May only be used against Vehicle or Monster models
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Scouts 1, Stealth 1, Strider (difficult terrain)
+
+
+\\
+
+
+% Unit
+Flyboys (5-15)
+&
+% Cost
+10 each
+&
+% Move
+10
+&
+% Will
+8+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Pistols: R8 A1 8+ D1, Assault
+    \item Choppers: R0 A1 4+ D1
+\end{itemize}
+&
+% Special rules
+Ambush, Bloodthirsty 1, Flying
+
+
+\\
+
+
+
+% Unit
+Gunners (5-15)
+&
+% Cost
+14 each
+&
+% Move
+5
+&
+% Will
+8+
+&
+% Life
+6+
+&
+% Weapons
+Pick one set:
+\begin{itemize}
+    \item Heavy guns: R20 A2 8+ D2 [Assault, Suppressive 0]
+    \item Knives: R0 A1 4+ D0
+\end{itemize}
+Or:
+\begin{itemize}
+    \item Rocket launchers: R20 A1 7+ D3 [Deadly D10-2 (min 1), Slow]
+    \item Knives: R0 A1 4+ D0
+\end{itemize}
+Or:
+\begin{itemize}
+    \item Flamethrowers: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+    \item Cutting torches: R0 A1 4+ D5 [Deadly 2, Slow]
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1
+
+
+\\
+
+
+% Unit
+Brutes (4-10)
+&
+% Cost
+20 each
+&
+% Move
+5
+&
+% Will
+7+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Brute guns: R16 A1 8+ D1 [Assault]
+    \item Brute weapons: R0 A2 3+ D1
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Tough 2
+
+
+\\
+
+
+% Unit
+Megabrutes (3-6)
+&
+% Cost
+40 each
+&
+% Move
+4
+&
+% Will
+7+
+&
+% Life
+2+
+&
+% Weapons
+\begin{itemize}
+    \item Megabrute guns: R16 A2 8+ D1 [Assault]
+    \item Powered brute weapons: R0 A1 3+ D6 [Deadly D5]
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Hardened, Tough 2
+
+
+\\
+
+
+% Unit
+Raiders (5-10)
+&
+% Cost
+30 each
+&
+% Move
+5
+&
+% Will
+7+
+&
+% Life
+4+
+&
+% Weapons
+\begin{itemize}
+    \item Heavy cannons R20 A2 6+ D4 [Area Effect, Deadly 2, Suppressive 1]
+    \item Brute weapons: R0 A2 3+ D1
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Tough 2
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Troops}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Goblin Herd (10-20)
+&
+% Cost
+4 each
+&
+% Move
+5
+&
+% Will
+9+
+&
+% Life
+9+
+&
+% Weapons
+\begin{itemize}
+    \item Blunderbuss: R10 A1 6+ D0
+    \item Assorted rusty blades: R0 A1 7+ D0
+\end{itemize}
+&
+% Special rules
+Bodyguards 4, Handy to Have Around
+
+
+\\
+
+
+% Unit
+Grunts (10-20)
+&
+% Cost
+4 each
+&
+% Move
+5
+&
+% Will
+8+
+&
+% Life
+6+
+&
+% Weapons
+Pick one set:
+\begin{itemize}
+    \item Guns: R16 A1 8+ D1 [Assault]
+    \item Knives: R0 A1 4+ D0
+\end{itemize}
+Or
+\begin{itemize}
+    \item Pistols: R8 A1 8+ D1, [Assault]
+    \item Choppers: R0 A1 4+ D1
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Fast}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Beast Herd (10-30)
+&
+% Cost
+5 each
+&
+% Move
+8
+&
+% Will
+9+
+&
+% Life
+8+
+&
+% Weapons
+Claws and teeth: R0 A2 3+ D0
+&
+% Special rules
+Fearless
+
+
+
+\\
+
+
+% Unit
+Bikers (5-15)
+&
+% Cost
+20 each
+&
+% Move
+12
+&
+% Will
+8+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Biker guns: R16 A4 8+ D1, [Assault]
+    \item Choppers: R0 A1 4+ D1
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Tough 2
+
+
+\\
+
+
+Blasta-Copters (1-5)
+&
+% Cost
+30 each
+&
+% Move
+16
+&
+% Will
+8+
+&
+% Life
+4+
+&
+% Weapons
+\begin{itemize}
+    \item Choppy blades: R0 A5 4+ D2
+    \item Pick one:
+    \begin{itemize}
+        \item Tons of guns: R20 A6 8+ D2 [Assault, Suppressive 0]
+        \item Rocket launchers: R20 A2 7+ D3 [Deadly D10-2 (min 1), slow]
+        \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
+        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Flying, Tough 3, Vehicle 5+, Vulnerable 2
+
+
+\\
+
+
+Snazz-Buggies (1-3)
+&
+% Cost
+40 each
+&
+% Move
+12
+&
+% Will
+8+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item Pick one:
+    \begin{itemize}
+        \item Tons of guns: R20 A6 8+ D2 [Assault, Suppressive 0]
+        \item Rocket launchers: R20 A2 7+ D3 [Deadly D10-2 (min 1), slow]
+        \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
+        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Tough 5, Vehicle 7+, Vulnerable 2
+
+
+\\
+
+
+Guntruck
+&
+% Cost
+120 each
+&
+% Move
+10
+&
+% Will
+8+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item Pick one:
+    \begin{itemize}
+        \item Mega cannon: R30 A8 6+ D3 [Area Effect, Deadly 3, Heavy, Slow]
+        \item Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2, Heavy, Slow, Unstable 2]
+        \item Giant flamethrower: R10 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Tough 7, Transport 5, Vehicle 7+, Vulnerable 2
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Transports}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Battle Bus
+&
+% Cost
+50
+&
+% Move
+12
+&
+% Will
+8+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item Pick one:
+    \begin{itemize}
+        \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
+        \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
+        \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Tough 7, Transport 15, Vehicle 7+, Vulnerable
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Heavy}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Tank Wagon
+&
+% Cost
+200
+&
+% Move
+10
+&
+% Will
+8+
+&
+% Life
+1+
+&
+% Weapons
+\begin{itemize}
+    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item Pick one:
+    \begin{itemize}
+        \item Tons of guns: R20 A6 7+ D2 [Assault, Suppressive 0]
+        \item Rocket launchers: R24 A2 6+ D3 [Deadly D10-2 (min 1), slow]
+        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 1]
+    \end{itemize}
+    \item Pick one:
+    \begin{itemize}
+        \item Mega cannon: R30 A8 6+ D3 [Area Effect, Deadly 3, Heavy, Slow]
+        \item Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2, Heavy, Slow, Unstable 2]
+        \item Giant flamethrower: R10 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Tough 10, Transport 20, Vehicle 7+, Vulnerable 1
+
+
+\\
+
+
+% Unit
+Dreadwalker
+&
+% Cost
+100
+&
+% Move
+7
+&
+% Will
+8+
+&
+% Life
+2+
+&
+% Weapons
+Pick any 4 of the following (can mix and match):
+\begin{itemize}
+    \item Powered weapons: R0 A2 3+ D6 [Deadly D5+1] (each additional one increased the A value by 2)
+    \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
+    \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
+    \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+\end{itemize}
+
+&
+% Special rules
+Bloodthirsty 1, Hardened, Tough 6, Vehicle 7+
+
+
+\\
+
+
+% Unit
+Killwalkers
+&
+% Cost
+50 each
+&
+% Move
+7
+&
+% Will
+8+
+&
+% Life
+3+
+&
+% Weapons
+Pick any 2 of the following (can mix and match):
+\begin{itemize}
+    \item Powered weapons: R0 A2 3+ D6 [Deadly D5+1] (each additional one increased the A value by 2)
+    \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
+    \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
+    \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+\end{itemize}
+
+&
+% Special rules
+Bloodthirsty 1, Hardened, Tough 4, Vehicle 7+
+
+
+\\
+
+
+% Unit
+Artillery Battery (1-3)
+&
+% Cost
+30 each
+&
+% Move
+5
+&
+% Will
+9+
+&
+% Life
+3+
+&
+% Weapons
+Pick one:
+\begin{itemize}
+    \item Howitzer: R30 A6 6+ D1 [Area Effect, Heavy, Slow, Suppressive 0]
+    \item Field gun: Choose a type each time it fires:
+    \begin{itemize}
+        \item Frag shell: R30 A4 6+ D1 [Area Effect, Heavy, Slow]
+        \item Tank shell: R30 A1, 6+ D6 [Deadly D10, Heavy, Slow]
+    \end{itemize}
+\end{itemize}
+
+&
+% Special rules
+Tough 2
+
+
+\\
+
+
+% Unit
+Mecha-Gun Battery (1-3)
+&
+% Cost
+60 each
+&
+% Move
+3
+&
+% Will
+9+
+&
+% Life
+3+
+&
+% Weapons
+Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2 Heavy, Slow, Unstable 2]
+&
+% Special rules
+Tough 2
+
+
+
+\end{tabular}
+
+\end{small}
+
+
+\end{document}
