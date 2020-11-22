@@ -7,10 +7,11 @@ The rules are fundamentally simple to encourage fast play, yet combine together 
 # How to get it
 
 ### Download the latest version
-[Click here](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.3-alpha/Rules.0.0.3.pdf) to download the latest release of the rules (0.0.3) in PDF form.
+[Click here](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.4-alpha/Rules.0.0.4.pdf) to download the latest release of the rules (0.0.4) in PDF form.
 
 Here are the rules for the different factions you can play as:
-- [Orc Raiders](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.3-alpha/Orc.Raiders.0.0.3.pdf)
+- [Planetary Defense Force](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.4-alpha/Planetary.Defense.Force.0.0.4.pdf)
+- [Orc Raiders](https://github.com/Pointedstick/wasteland-tactics/releases/download/v0.0.4-alpha/Orc.Raiders.0.0.4.pdf)
 
 ### Build from source
 The Wasteland Tactics rules are written using LaTeX. To compile them into a PDF document, you will need a LaTeX app or compiler.
