@@ -1,0 +1,749 @@
+% Be landscape
+\documentclass[landscape]{extarticle}
+
+% Use sans serif fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Use more normal-ish margins
+\usepackage[margin=0.4in]{geometry}
+
+% Don't number the pages
+\pagenumbering{gobble}
+
+% Use alternating row colors for the tables
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.95}
+\rowcolors{1}{white}{lightgray}
+
+% Define some fixed-width columns
+% Unit column
+\newcolumntype{U}{>{\arraybackslash}m{3cm}}
+% Weapons column
+\newcolumntype{W}{>{\arraybackslash}m{9.5cm}}
+% Special Rules column
+\newcolumntype{S}{>{\arraybackslash}m{7cm}}
+
+% Add extra space between paragraphs
+\parskip = 0.4\baselineskip
+
+% ...but not so much after sections and subsections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{1.3em}{-\parskip}
+\titlespacing{\subsection}{0pt}{0em}{-\parskip}
+
+% Make subsubsections live on the same line as the text
+\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Reduce the huge amount of space before chapter titles
+\titleformat{\chapter}[display]   
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}   
+\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]
+
+% Be abe to reduce list padding
+\usepackage{enumitem}
+\setlist[itemize]{nosep,leftmargin=*}
+\setlist[enumerate]{nosep,leftmargin=*}
+
+% Add a page border
+% TODO: Find a better one
+% \usepackage{wallpaper}
+% \CenterWallPaper{1}{page_border_wood.jpg}
+
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Planetary Defense Force}
+\author{Nate Graham}
+\date{\today\\ Version 0.0.4}
+
+\maketitle
+
+The Planetary Defense Force is an endless army grinding relentlessly forward with numberless masses of men, guns and tanks. An individual soldier is weak and unthreatening, but alongside dozens or hundreds of his comrades organized into complex formations, and backed up by the might of heavy weapons and armored vehicles, the combined whole is a force to be reckoned with.
+
+You might enjoy playing as the Planetary Defense Force if you appreciate military history or tactics and empathize with the common soldier on the front lines of a conflict much larger than him.
+
+ 
+
+\section*{Army-specific rules}
+
+\subsection*{New unit rules}
+
+\subsubsection*{Endless Army:} You may take up double the number of Troops units permitted by the game type.
+
+\subsection*{New weapon rules}
+
+\subsubsection*{Crew-Served:} This weapon requires an additional model serving as a loader to operate at full capability. Each weapon in the unit requires a different loader model, and the loader may not shoot its own weapons during a shoot action when the weapon is fired. If no suitable loader is present, the weapon gains the Slow rule. If it already had the Slow rule, it loses 1 from its A value. If the weapon's A value is already 1, then it may not be fired at all.
+
+\subsection*{Special commands}
+
+\subsubsection*{Call in fire support!} Target a visible enemy unit and roll a die. On a 4+, that enemy unit is attacked, but on a roll of 1, the owner of the target unit chooses one of your units to be attacked instead! The affected unit is attacked by a weapon with the following characteristics: R1000 A6 8+ D4 [Area Effect, Deadly 2, Suppressive 2]
+
+\subsubsection*{Finish them off!} The unit gains +2 Shoot when targeting an enemy unit that has any suppression markers.
+
+\subsubsection*{Make for the ultimate sacrifice!} The unit gains the “Bodyguards 4+” special rule for the duration of the round.
+
+
+
+\pagebreak
+
+
+
+\begin{small}
+
+\section*{Command}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Command Squad (5)
+&
+% Cost
+40
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Rifle: R20 A1 5+ D0
+    \item Combat Knife: R0 A1 5+ D0
+    \item One model also has an Energy Sword: R0 A2 5+ D6
+\end{itemize}
+&
+% Special rules
+Leadership 2, Medic 8+
+
+
+
+\\
+
+
+
+% Unit
+Drill Sergeant 
+&
+% Cost
+30
+&
+% Move
+6
+&
+% Will
+3+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Battle Pistol: R10 A1 5+ D2 [Assault]
+    \item Energy Sword: R0 A2 5+ D6
+\end{itemize}
+&
+% Special rules
+Leadership 1, Price of Failure 1
+
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Spearhead}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Heavy Trooper Squad (5-10)
+&
+% Cost
+9 each
+&
+% Move
+5
+&
+% Will
+5+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Battle Rifle: R20 A1 5+ D2
+    \item Combat Knife: R0 A1 6+ D0
+    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+\end{itemize}
+&
+% Special rules
+Acute Senses, Medic 8+
+
+
+
+\\
+
+
+
+% Unit
+Special Weapons Squad (5-10)
+&
+% Cost
+12 each
+&
+% Move
+6
+&
+% Will
+6+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Rifle: R20 A1 6+ D0
+    \item Combat Knife: R0 A1 6+ D0
+    \item Half of the models (rounded down) also have one of the following (you may mix and match):
+    \begin{itemize}
+        \item Flamethrower: R8 A4 Autohit D1 [Assault, Slow, Spray, Terrifying 1]
+        \item Grenade Launcher: R20 A3 6+ D1 [Area Effect, Assault, Slow, Suppressive 1]
+        \item Magma Gun: R10 A1 6+ D8 [Critical 8+, Deadly 2D5, Slow]
+        \item Antimatter Gun: R20 A1 6+ D6, [Deadly 2, Unstable]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Medic 8+
+
+
+
+\\
+
+
+
+% Unit
+Paratrooper Squad (10)
+&
+% Cost
+90
+&
+% Move
+7
+&
+% Will
+6+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Carbine: R15 A2 6+ D0 [Assault]
+    \item Combat Knife: R0 A1 6+ D0
+    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+\end{itemize}
+&
+% Special rules
+Ambush, Scouts 1, Medic 8+
+
+
+
+\\
+
+
+
+% Unit
+Sniper Team (5)
+&
+% Cost
+30
+&
+% Move
+7
+&
+% Will
+5+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item 2 models have a Sniper Rifle: R30 A1 5+ D6 [Crew-Served, Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]
+    \item 3 models have a Carbine: R15 A2 6+ D0 [Assault]
+    \item Combat Knife: R0 A1 6+ D0
+\end{itemize}
+&
+% Special rules
+Acute Senses, Scouts 1, Stealth 2, Strider (horizontal difficult terrain and vertically impassible terrain)
+
+
+\\
+
+
+% Unit
+Impressed Psychic
+&
+% Cost
+15
+&
+% Move
+6
+&
+% Will
+5+
+&
+% Life
+8+
+&
+% Weapons
+\begin{itemize}
+    \item Combat Knife: R0 A1 6+ D0
+\end{itemize}
+&
+% Special rules
+Caster 1
+
+
+\\
+
+
+% Unit
+Ogres (3-6)
+&
+% Cost
+20 each
+&
+% Move
+6
+&
+% Will
+7+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Huge Melee Weapons: R0 A2 4+ D3 [Deadly 2]
+    \item Huge Combat Shotgun: R10 A2 7+ D2 [Assault]
+\end{itemize}
+&
+% Special rules
+Bloodthirsty 1, Tough 3
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Troops}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Infantry Squad (10)
+&
+% Cost
+70
+&
+% Move
+6
+&
+% Will
+6+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Rifle: R20 A1 6+ D0
+    \item Combat Knife: R0 A1 6+ D0
+    \item One model also has a Heavy Machine Gun: R20 A3 6+ D2 [Heavy, Suppressive 1]
+    \item A different model also has one of the following:
+    \begin{itemize}
+        \item Flamethrower: R8 A4 Autohit D1 [Assault, Slow, Spray, Terrifying 1]
+        \item Grenade Launcher: R20 A3 6+ D1 [Area Effect, Assault, Slow, Suppressive 1]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Medic 9+
+
+
+
+\\
+
+
+% Unit
+Conscript Mob (20)
+&
+% Cost
+100
+&
+% Move
+6
+&
+% Will
+7+
+&
+% Life
+7+
+&
+% Weapons
+\begin{itemize}
+    \item Rifle: R20 A1 7+ D0
+    \item Combat Knife: R0 A1 7+ D0
+\end{itemize}
+&
+% Special rules
+Bodyguards 6+
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Fast}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Heavy Cavalry (3-10)
+&
+% Cost
+15 each
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+5+
+&
+% Weapons
+\begin{itemize}
+    \item Heavy Melee Weapon: R0 A2 6+ D1
+    \item Carbine: R15 A2 6+ D0 [Assault]
+    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+\end{itemize}
+&
+% Special rules
+Scouts 1, Reach, Tough 2
+
+
+
+\\
+
+
+
+% Unit
+Dragon Tank
+&
+% Cost
+120
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\begin{itemize}
+    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
+    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+    \item Giant Flamethrower: R10 A12 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+\end{itemize}
+&
+% Special rules
+Hardened, Tough 8, Vehicle 6+, Vulnerable 1
+
+
+
+\\
+
+
+
+% Unit
+Scout Walkers (1-3)
+&
+% Cost
+40 each
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Blades and Saws: R0 A3 7+ D3 [Deadly 2]
+    \item Each model also has one of the following (you may mix and match):
+    \begin{itemize}
+        \item Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+        \item Autocannon: R30 A2 5+ D4 [Deadly 2, Heavy, Slow]
+        \item Rocket Launcher: R40 A1 5+ D6 [Critical 9+, Deadly D10, Heavy, Slow]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Open, Scouts 1, Tough 5, Vehicle 9+
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Transports}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Light APC
+&
+% Cost
+40
+&
+% Move
+12
+&
+% Will
+6+
+&
+% Life
+3+
+&
+% Weapons
+\begin{itemize}
+    \item Reinforced Ram: R0 A1 6+ D5 [Deadly 4]
+    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+\end{itemize}
+&
+% Special rules
+Open, Tough 6, Transport 7, Vehicle 7+, Vulnerable 1
+
+
+
+\\
+
+
+
+% Unit
+Heavy APC
+&
+% Cost
+60
+&
+% Move
+10      
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\begin{itemize}
+    \item Reinforced Ram: R0 A1 6+ D5 [Deadly 4]
+    \item Pick one:
+    \begin{itemize}
+        \item Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+        \item Autocannon: R30 A3 5+ D4 [Deadly 2, Heavy, Slow]
+        \item Rocket Launcher: R40 A1 5+ D6 [Critical 9+, Deadly D10, Heavy, Slow]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Hardened, Tough 8, Transport 12, Vehicle 8+, Vulnerable 1
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Heavy}
+
+\begin{tabular}{UccccWS}
+
+\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
+
+
+\hline
+
+
+% Unit
+Battle Tank
+&
+% Cost
+200
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+0+
+&
+% Weapons
+\begin{itemize}
+    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
+    \item Heavy Machine Guns: R20 A6 5+ D2 [Heavy, Suppressive 1]
+    \item Pick one:
+    \begin{itemize}
+        \item Anti-Tank Cannon: R40 A1 5+ D8 [Critical 9+, Deadly D10+1, Heavy, Slow]
+        \item Gatling Cannon: R30 A7 5+ D2 [Heavy, Suppressive 3]
+        \item Long-Range Cannon: R40 A6 5+ D5 [Area Effect, Deadly 3, Heavy, Slow]
+        \item Siege Cannon R20 A8 5+ D8 [Area Effect, Deadly D5+3, Heavy, Slow, Terrifying 1]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+Hardened, Tough 10, Vehicle 8+, Vulnerable 1
+
+
+
+
+\\
+
+
+
+
+% Unit
+Mechanized Artillery
+&
+% Cost
+120
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\begin{itemize}
+    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
+    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+    \item Artillery Cannon: R80 A8 5+ [Heavy, Indirect, Slow, Suppressive 1]
+\end{itemize}
+&
+% Special rules
+Hardened, Tough 8, Vehicle 8+, Vulnerable 1
+
+
+
+\\
+
+
+
+% Unit
+Heavy Weapons Squad (6-10)
+&
+% Cost
+10 each
+&
+% Move
+6
+&
+% Will
+6+
+&
+% Life
+6+
+&
+% Weapons
+\begin{itemize}
+    \item Rifle: R20 A1 6+ D0
+    \item Combat Knife: R0 A1 6+ D0
+    \item Half of the models (rounded down) also have one of the following (you may mix and match):
+    \begin{itemize}
+        \item Heavy Machine Gun: R20 A3 6+ D2 [Crew-Served, Heavy, Suppressive 1]
+        \item Autocannon: R30 A2 6+ D4 [Deadly 2, Crew-Served, Heavy, Slow]
+        \item Rocket Launcher: R40 A1 6+ D6 [Crew-Served, Critical 9+, Deadly D10, Heavy, Slow]
+    \end{itemize}
+\end{itemize}
+&
+% Special rules
+
+\end{tabular}
+
+\end{small}
+
+
+\end{document}
