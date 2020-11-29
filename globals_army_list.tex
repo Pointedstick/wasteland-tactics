@@ -10,11 +10,6 @@
 % Don't number the pages
 \pagenumbering{gobble}
 
-% Override list padding to remove standard left margin
-\usepackage{enumitem}
-\setlist[itemize]{nosep,leftmargin=*}
-\setlist[enumerate]{nosep,leftmargin=*}
-
 % Use alternating row colors for the tables
 \usepackage[table]{xcolor}
 \definecolor{lightgray}{gray}{0.95}
@@ -30,3 +25,6 @@
 
 % Inherit standard global formatting for everything else
 \input{globals.tex}
+
+% increase vertical spacing between table rows
+\renewcommand{\arraystretch}{1.6}
