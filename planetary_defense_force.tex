@@ -18,7 +18,66 @@ The Planetary Defense Force is an endless army grinding relentlessly forward wit
 
 You might enjoy playing as the Planetary Defense Force if you appreciate military history or tactics and empathize with the common soldier on the front lines of a conflict much larger than him.
 
- 
+
+
+
+
+
+% Common weapon definitions
+% =========================
+
+% Melee weapons
+% -------------
+% Handheld
+\newcommand{\CombatKnife}[1][6+]{Combat Knife: R0 A1 {#1} D0}
+\newcommand{\DemoCharges}[1][6+]{Demo Charges: R0 A1 {#1} D6 Critical 9+, Deadly D5+2, Slow, Unstable 1, May only be used against Vehicle or Monster models}
+\newcommand{\EnergySword}[1][5+]{Energy Sword: R0 A2 {#1} D6}
+\newcommand{\HeavyMeleeWeapon}[1][6+]{Heavy Melee Weapon: R0 A2 {#1} D1}
+\newcommand{\HugeMeleeWeapon}[1][4+]{Huge Melee Weapon: R0 A2 {#1} D3 [Deadly 2]}
+
+% Vehicle-borne
+\newcommand{\BladesAndSaws}[1][7+]{Blades and Saws: R0 A3 {#1} D3 [Deadly 2]}
+\newcommand{\CrushingTracks}[1][9+]{Crushing Tracks: R0 A3 {#1} D8 [Deadly 4]}
+\newcommand{\ReinforcedRam}[1][6+]{Reinforced Ram: R0 A1 {#1} D5 [Deadly 4]}
+
+
+% Ranged weapons
+% --------------
+% Handheld
+\newcommand{\AntimatterGun}[1][6+]{Antimatter Gun: R20 A1 {#1} D6, [Deadly 2, Unstable]}
+\newcommand{\AutocannonCrewed}[1][6+]{Autocannon: R30 A2 {#1} D4 [Deadly 2, Crew-Served, Heavy, Slow]}
+\newcommand{\BattlePistol}[1][5+]{Battle Pistol: R10 A1 {#1} D2 [Assault]}
+\newcommand{\BattleRifle}[1][5+]{Battle Rifle: R20 A1 {#1} D2}
+%FIXME: default hit value should be 7+ since it's an assault weapon
+\newcommand{\Carbine}[1][6+]{Carbine: R15 A2 {#1} D0 [Assault]} 
+\newcommand{\Flamethrower}{Flamethrower: R8 A4 Autohit D1 [Assault, Slow, Spray, Terrifying 1]}
+\newcommand{\GrenadeLauncher}[1][6+]{Grenade Launcher: R20 A3 {#1} D1 [Area Effect, Assault, Slow, Suppressive 1]}
+\newcommand{\Grenades}[1][5+]{Grenades: R6 A3 {#1} D1 [Area Effect, Assault, Suppressive 0]}
+\newcommand{\HeavyMachineGunCrewed}[1][6+]{Heavy Machine Gun: R20 A3 {#1} D2 [Crew-Served, Heavy, Suppressive 1]}
+\newcommand{\HugeCombatShotgun}[1][7+]{Huge Combat Shotgun: R10 A2 {#1} D2 [Assault]}
+\newcommand{\MagmaGun}[1][6+]{Magma Gun: R10 A1 {#1} D8 [Critical 8+, Deadly 2D5, Slow]}
+\newcommand{\MortarCrewed}[1][6+]{Mortar: R30 A6 {#1} D1 [Area Effect, Crew-Served, Heavy, Slow, Suppressive 0]}
+\newcommand{\Rifle}[1][6+]{Rifle: R20 A1 {#1} D0}
+\newcommand{\RocketLauncherCrewed}[1][6+]{Rocket Launcher: R40 A1 {#1} D6 [Crew-Served, Critical 9+, Deadly D10, Heavy, Slow]}
+\newcommand{\SniperRifle}[1][5+]{Sniper Rifle: R30 A1 {#1} D6 [Crew-Served, Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]}
+
+% Vehicle-borne
+\newcommand{\AntiTankCannon}[1][5+]{Anti-Tank Cannon: R40 A1 {#1} D8 [Critical 9+, Deadly D10+1, Heavy, Slow]}
+\newcommand{\ArtilleryCannon}[1][5+]{Artillery Cannon: R80 A8 {#1} [Heavy, Indirect, Slow, Suppressive 1]}
+\newcommand{\Autocannon}[1][5+]{Autocannon: R30 A2 {#1} D4 [Deadly 2, Heavy, Slow]}
+\newcommand{\GatlingCannon}[1][5+]{Gatling Cannon: R30 A7 {#1} D2 [Heavy, Suppressive 3]}
+\newcommand{\HeavyFlamethrower}{Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\HeavyMachineGun}[1][5+]{Heavy Machine Gun: R20 A3 {#1} D2 [Heavy, Suppressive 1]}
+\newcommand{\HeavyMachineGuns}[1][5+]{Heavy Machine Gun: R20 A6 {#1} D2 [Heavy, Suppressive 1]}
+\newcommand{\GiantFlamethrower}{Giant Flamethrower: R10 A12 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\LongRangeCannon}[1][5+]{Long-Range Cannon: R40 A6 {#1} D5 [Area Effect, Deadly 3, Heavy, Slow]}
+\newcommand{\RocketLauncher}[1][5+]{Rocket Launcher: R40 A1 {#1} D6 [Critical 9+, Deadly D10, Heavy, Slow]}
+\newcommand{\SiegeCannon}[1][5+]{Siege Cannon R20 A8 {#1} D8 [Area Effect, Deadly D5+3, Heavy, Slow, Terrifying 1]}
+
+
+
+
+
 
 \section*{Army-specific rules}
 
@@ -67,9 +126,9 @@ Command Squad (5)
 &
 % Weapons
 \begin{itemize}
-    \item Rifle: R20 A1 5+ D0
-    \item Combat Knife: R0 A1 5+ D0
-    \item One model also has an Energy Sword: R0 A2 5+ D6
+    \item \Rifle[5+]
+    \item \CombatKnife[5+]
+    \item One model also has an \EnergySword
 \end{itemize}
 &
 % Special rules
@@ -98,8 +157,8 @@ Drill Sergeant
 &
 % Weapons
 \begin{itemize}
-    \item Battle Pistol: R10 A1 5+ D2 [Assault]
-    \item Energy Sword: R0 A2 5+ D6
+    \item \BattlePistol
+    \item \EnergySword
 \end{itemize}
 &
 % Special rules
@@ -135,9 +194,9 @@ Heavy Trooper Squad (5-10)
 &
 % Weapons
 \begin{itemize}
-    \item Battle Rifle: R20 A1 5+ D2
-    \item Combat Knife: R0 A1 6+ D0
-    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+    \item \BattleRifle
+    \item \CombatKnife
+    \item \Grenades
 \end{itemize}
 &
 % Special rules
@@ -166,15 +225,15 @@ Special Weapons Squad (5-10)
 &
 % Weapons
 \begin{itemize}
-    \item Rifle: R20 A1 6+ D0
-    \item Combat Knife: R0 A1 6+ D0
-    \item Demo Charges: R0 A1 6+ D6 Critical 9+, Deadly D5+2, Slow, Unstable 1, May only be used against Vehicle or Monster models
+    \item \Rifle
+    \item \CombatKnife
+    \item \DemoCharges
     \item Half of the models (rounded down) also have one of the following (you may mix and match):
     \begin{itemize}
-        \item Flamethrower: R8 A4 Autohit D1 [Assault, Slow, Spray, Terrifying 1]
-        \item Grenade Launcher: R20 A3 6+ D1 [Area Effect, Assault, Slow, Suppressive 1]
-        \item Magma Gun: R10 A1 6+ D8 [Critical 8+, Deadly 2D5, Slow]
-        \item Antimatter Gun: R20 A1 6+ D6, [Deadly 2, Unstable]
+        \item \Flamethrower
+        \item \GrenadeLauncher
+        \item \MagmaGun
+        \item \AntimatterGun
     \end{itemize}
 \end{itemize}
 &
@@ -204,9 +263,9 @@ Paratrooper Squad (10)
 &
 % Weapons
 \begin{itemize}
-    \item Carbine: R15 A2 6+ D0 [Assault]
-    \item Combat Knife: R0 A1 6+ D0
-    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+    \item \Carbine
+    \item \CombatKnife
+    \item \Grenades
 \end{itemize}
 &
 % Special rules
@@ -235,9 +294,9 @@ Sniper Team (5)
 &
 % Weapons
 \begin{itemize}
-    \item 2 models have a Sniper Rifle: R30 A1 5+ D6 [Crew-Served, Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]
-    \item 3 models have a Carbine: R15 A2 6+ D0 [Assault]
-    \item Combat Knife: R0 A1 6+ D0
+    \item 2 models have a \SniperRifle
+    \item 3 models have a \Carbine
+    \item \CombatKnife
 \end{itemize}
 &
 % Special rules
@@ -264,7 +323,7 @@ Impressed Psychic
 &
 % Weapons
 \begin{itemize}
-    \item Combat Knife: R0 A1 6+ D0
+    \item \CombatKnife
 \end{itemize}
 &
 % Special rules
@@ -291,8 +350,8 @@ Ogres (3-6)
 &
 % Weapons
 \begin{itemize}
-    \item Huge Melee Weapons: R0 A2 4+ D3 [Deadly 2]
-    \item Huge Combat Shotgun: R10 A2 7+ D2 [Assault]
+    \item \HugeMeleeWeapon
+    \item \HugeCombatShotgun
 \end{itemize}
 &
 % Special rules
@@ -327,13 +386,14 @@ Infantry Squad (10)
 &
 % Weapons
 \begin{itemize}
-    \item Rifle: R20 A1 6+ D0
-    \item Combat Knife: R0 A1 6+ D0
+    \item \Rifle
+    \item \CombatKnife
+    % FIXME: HMG should be crew-served
     \item One model also has a Heavy Machine Gun: R20 A3 6+ D2 [Heavy, Suppressive 1]
     \item A different model also has one of the following:
     \begin{itemize}
-        \item Flamethrower: R8 A4 Autohit D1 [Assault, Slow, Spray, Terrifying 1]
-        \item Grenade Launcher: R20 A3 6+ D1 [Area Effect, Assault, Slow, Suppressive 1]
+        \item \Flamethrower
+        \item \GrenadeLauncher
     \end{itemize}
 \end{itemize}
 &
@@ -362,8 +422,8 @@ Conscript Mob (20)
 &
 % Weapons
 \begin{itemize}
-    \item Rifle: R20 A1 7+ D0
-    \item Combat Knife: R0 A1 7+ D0
+    \item \Rifle[7+]
+    \item \CombatKnife[7+]
 \end{itemize}
 &
 % Special rules
@@ -397,9 +457,9 @@ Heavy Cavalry (3-10)
 &
 % Weapons
 \begin{itemize}
-    \item Heavy Melee Weapon: R0 A2 6+ D1
-    \item Carbine: R15 A2 6+ D0 [Assault]
-    \item Grenades: R6 A3 5+ D1 [Area Effect, Assault, Suppressive 0]
+    \item \HeavyMeleeWeapon
+    \item \Carbine
+    \item \Grenades
 \end{itemize}
 &
 % Special rules
@@ -428,9 +488,9 @@ Dragon Tank
 &
 % Weapons
 \begin{itemize}
-    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
-    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
-    \item Giant Flamethrower: R10 A12 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+    \item \CrushingTracks
+    \item \HeavyMachineGun
+    \item \GiantFlamethrower
 \end{itemize}
 &
 % Special rules
@@ -459,13 +519,13 @@ Scout Walkers (1-3)
 &
 % Weapons
 \begin{itemize}
-    \item Blades and Saws: R0 A3 7+ D3 [Deadly 2]
+    \item \BladesAndSaws
     \item Each model also has one of the following (you may mix and match):
     \begin{itemize}
-        \item Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
-        \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
-        \item Autocannon: R30 A2 5+ D4 [Deadly 2, Heavy, Slow]
-        \item Rocket Launcher: R40 A1 5+ D6 [Critical 9+, Deadly D10, Heavy, Slow]
+        \item \HeavyFlamethrower
+        \item \HeavyMachineGun
+        \item \Autocannon
+        \item \RocketLauncher
     \end{itemize}
 \end{itemize}
 &
@@ -501,8 +561,8 @@ Light APC
 &
 % Weapons
 \begin{itemize}
-    \item Reinforced Ram: R0 A1 6+ D5 [Deadly 4]
-    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
+    \item \ReinforcedRam
+    \item \HeavyMachineGun
 \end{itemize}
 &
 % Special rules
@@ -531,13 +591,13 @@ Heavy APC
 &
 % Weapons
 \begin{itemize}
-    \item Reinforced Ram: R0 A1 6+ D5 [Deadly 4]
+    \item \ReinforcedRam
     \item Pick one:
     \begin{itemize}
-        \item Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
-        \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
-        \item Autocannon: R30 A3 5+ D4 [Deadly 2, Heavy, Slow]
-        \item Rocket Launcher: R40 A1 5+ D6 [Critical 9+, Deadly D10, Heavy, Slow]
+        \item \HeavyFlamethrower
+        \item \HeavyMachineGun
+        \item \Autocannon
+        \item \RocketLauncher
     \end{itemize}
 \end{itemize}
 &
@@ -572,14 +632,14 @@ Battle Tank
 &
 % Weapons
 \begin{itemize}
-    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
-    \item Heavy Machine Guns: R20 A6 5+ D2 [Heavy, Suppressive 1]
+    \item \CrushingTracks
+    \item \HeavyMachineGuns
     \item Pick one:
     \begin{itemize}
-        \item Anti-Tank Cannon: R40 A1 5+ D8 [Critical 9+, Deadly D10+1, Heavy, Slow]
-        \item Gatling Cannon: R30 A7 5+ D2 [Heavy, Suppressive 3]
-        \item Long-Range Cannon: R40 A6 5+ D5 [Area Effect, Deadly 3, Heavy, Slow]
-        \item Siege Cannon R20 A8 5+ D8 [Area Effect, Deadly D5+3, Heavy, Slow, Terrifying 1]
+        \item \AntiTankCannon
+        \item \GatlingCannon
+        \item \LongRangeCannon
+        \item \SiegeCannon
     \end{itemize}
 \end{itemize}
 &
@@ -611,9 +671,9 @@ Mechanized Artillery
 &
 % Weapons
 \begin{itemize}
-    \item Crushing Tracks: R0 A3 9+ D8 [Deadly 4]
-    \item Heavy Machine Gun: R20 A3 5+ D2 [Heavy, Suppressive 1]
-    \item Artillery Cannon: R80 A8 5+ [Heavy, Indirect, Slow, Suppressive 1]
+    \item \CrushingTracks
+    \item \HeavyMachineGun
+    \item \ArtilleryCannon
 \end{itemize}
 &
 % Special rules
@@ -642,14 +702,14 @@ Heavy Weapons Squad (6-10)
 &
 % Weapons
 \begin{itemize}
-    \item Rifle: R20 A1 6+ D0
-    \item Combat Knife: R0 A1 6+ D0
+    \item \Rifle
+    \item \CombatKnife
     \item Half of the models (rounded down) also have one of the following (you may mix and match):
     \begin{itemize}
-        \item Heavy Machine Gun: R20 A3 6+ D2 [Crew-Served, Heavy, Suppressive 1]
-        \item Mortar: R30 A6 6+ D1 [Area Effect, Crew-Served, Heavy, Slow, Suppressive 0]
-        \item Autocannon: R30 A2 6+ D4 [Deadly 2, Crew-Served, Heavy, Slow]
-        \item Rocket Launcher: R40 A1 6+ D6 [Crew-Served, Critical 9+, Deadly D10, Heavy, Slow]
+        \item \AutocannonCrewed
+        \item \HeavyMachineGunCrewed
+        \item \MortarCrewed
+        \item \RocketLauncherCrewed
     \end{itemize}
 \end{itemize}
 &

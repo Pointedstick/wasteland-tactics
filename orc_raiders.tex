@@ -20,6 +20,72 @@ You might enjoy playing as the Orc Raiders if you like falling upon your enemies
 
 
 
+
+
+
+% Common weapon definitions
+% =========================
+
+% Melee weapons
+% -------------
+% Handheld
+\newcommand{\BruteWeapon}[1][3+]{Brute Weapon: R0 A2 {#1} D1}
+\newcommand{\BustaBombs}[1][4+]{Busta bombs: R0 A1 {#1} D5 Critical 10, Deadly D5, Slow, Unstable 2, May only be used against Vehicle or Monster models}
+\newcommand{\Chopper}[1][4+]{Chopper: R0 A1 {#1} D1}
+\newcommand{\ClawsAndTeeth}[1][3+]{Claws and Teeth: R0 A2 {#1} D0}
+\newcommand{\CuttingTorch}[1][4+]{Cutting Torch: R0 A1 {#1} D5 [Deadly 2, Slow]}
+\newcommand{\HugeBossChopper}[1][2+]{Huge Boss Chopper: R0 A4 {#1} D4 [Deadly 2]}
+\newcommand{\Knife}[1][4+]{Knife: R0 A1 {#1} D0}
+\newcommand{\PoweredBossWeapon}[1][3+]{Powered Boss Weapon: R0 A2 {#1} D6 [Deadly D5+1]}
+\newcommand{\PoweredBruteWeapon}[1][4+]{Powered Brute Weapon: R0 A1 {#1} D6 [Deadly D5]}
+\newcommand{\RustyBlade}[1][7+]{Rusty Blade: R0 A1 {#1} D0}
+
+% Vehicle-borne
+\newcommand{\ChoppyBlades}[1][4+]{Choppy Blades: R0 A5 {#1} D2}
+\newcommand{\PoweredWeapon}[1][3+]{Powered Weapon: R0 A2 {#1} D6 [Deadly D5+1] (each additional one increased the A value by 2)}
+\newcommand{\SpikyRam}[1][4+]{Spiky Ram: R0 A1 {#1} D5 [Deadly 4]}
+
+
+% Ranged weapons
+% --------------
+% Handheld
+\newcommand{\BikerGuns}[1][8+]{Biker Guns: R16 A4 {#1} D1 [Assault]}
+\newcommand{\Blunderbuss}[1][6+]{Blunderbuss: R10 A1 {#1} D0}
+\newcommand{\BossGun}[1][8+]{Boss Gun: R16 A2 {#1} D2 [Assault, Deadly 2]}
+\newcommand{\BruteGun}[1][8+]{Brute Gun: R16 A1 {#1} D1 [Assault]}
+\newcommand{\Gun}[1][8+]{Gun: R16 A1 {#1} D1 [Assault]}
+\newcommand{\HeavyCannon}[1][6+]{Heavy Cannon R20 A2 {#1} D4 [Area Effect, Deadly 2, Suppressive 1]}
+\newcommand{\HeavyGun}[1][8+]{Heavy Gun: R20 A2 {#1} D2 [Assault, Suppressive 0]}
+\newcommand{\MegabruteGun}[1][8+]{Megabrute Gun: R16 A2 {#1} D1 [Assault]}
+\newcommand{\Pistol}[1][8+]{Pistol: R8 A1 {#1} D1 [Assault]}
+
+
+% Sometimes handheld, sometimes vehicle-borne
+\newcommand{\Flamethrower}{Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]}
+\newcommand{\TechnoBlaster}[1][7+]{Techno Blaster: R20 A1 {#1} D5 [Deadly D10, Slow, Unstable]}
+
+% Vehicle-borne
+\newcommand{\FieldGun}[1][6+]{Field Gun: Choose a type each time it fires:
+\begin{itemize}
+    \item Frag shell: R30 A4 6+ D1 [Area Effect, Heavy, Slow]
+    \item Tank shell: R30 A1, 6+ D6 [Deadly D10, Heavy, Slow]
+\end{itemize}
+}
+\newcommand{\GiantFlamethrower}{Giant Flamethrower: R10 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\HeavyFlamethrower}{Heavy Flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\Howitzer}[1][6+]{Howitzer: R30 A6 {#1} D1 [Area Effect, Heavy, Slow, Suppressive 0]}
+\newcommand{\LotsOfGuns}[1][8+]{Lots of Guns: R20 A3 {#1} D2 [Assault, Suppressive 0]}
+\newcommand{\MegaCannon}[1][6+]{Mega Cannon: R30 A8 {#1} D3 [Area Effect, Deadly 3, Heavy, Slow]}
+\newcommand{\RocketLauncher}[1][7+]{Rocket Launcher: R20 A1 {#1} D3 [Deadly D10-2 (min 1), slow]}
+\newcommand{\RocketLaunchers}[1][7+]{Rocket Launchers: R20 A2 {#1} D3 [Deadly D10-2 (min 1), slow]}
+\newcommand{\TechnoCannon}[1][6+]{Techno Cannon: R30 A3 {#1} D5 [Area Effect, Critical 10, Deadly D10+2, Heavy, Slow, Unstable 2]}
+\newcommand{\TonsOfGuns}[1][8+]{Tons of Guns: R20 A6 {#1} D2 [Assault, Suppressive 0]}
+
+
+
+
+
+
 \section*{Army-specific rules}
 
 \subsection*{New unit rules}
@@ -79,11 +145,11 @@ Big Boss
 &
 % Weapons
 \begin{itemize}
-    \item Boss guns: R16 A2 8+ D2 [Assault, Deadly 2]
+    \item \BossGun
     \item Pick one:
     \begin{itemize}
-        \item Huge boss chopper: R0 A4 2+ D4 [Deadly 2]
-        \item Powered boss weapons: R0 A2 3+ D6 [Deadly D5+1]
+        \item \HugeBossChopper
+        \item \PoweredBossWeapon
     \end{itemize}
 \end{itemize}
 &
@@ -111,11 +177,11 @@ Biker Boss
 &
 % Weapons
 \begin{itemize}
-    \item Biker guns: R16 A4 8+ D1 [Assault]
+    \item \BikerGuns
     \item Pick one:
     \begin{itemize}
-        \item Huge boss chopper: R0 A4 2+ D4 [Deadly 2]
-        \item Powered boss weapons: R0 A2 3+ D6 [Deadly D5+1]
+        \item \HugeBossChopper
+        \item \PoweredBossWeapon
     \end{itemize}
 \end{itemize}
 &
@@ -143,8 +209,8 @@ Mech Boss
 &
 % Weapons
 \begin{itemize}
-    \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
-    \item Brute chopper: R0 A2 3+ D1
+    \item \TechnoBlaster
+    \item \BruteWeapon
 \end{itemize}
 &
 % Special rules
@@ -170,7 +236,7 @@ Psycho Boss
 5+
 &
 % Weapons
-Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+\PoweredBruteWeapon
 &
 % Special rules
 Bloodthirsty 1, Caster 1, Tough 2
@@ -195,7 +261,7 @@ Sawbones Boss
 5+
 &
 % Weapons
-Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+\PoweredBruteWeapon
 &
 % Special rules
 Bloodthirsty 1, Medic 5+, Tough 2
@@ -220,7 +286,7 @@ Herder Boss
 5+
 &
 % Weapons
-Powered brute weapons: R0 A1 4+ D6 [Deadly D5]
+\PoweredBruteWeapon
 &
 % Special rules
 Bloodthirsty 1, Price of Failure 3 (only for Goblin Herd and Beast Herd units) Tough 2, Support (+3 Will to Goblin Herd and beast Herd units)
@@ -254,9 +320,9 @@ Guerillas (5-15)
 &
 % Weapons
 \begin{itemize}
-    \item Pistols: R8 A1 8+ D1, Assault
-    \item Choppers: R0 A1 4+ D1
-\item Busta bombs: R0 A1 4+ D5 Critical 10, Deadly D5, Slow, Unstable 2, May only be used against Vehicle or Monster models
+    \item \Pistol
+    \item \Chopper
+    \item \BustaBombs
 \end{itemize}
 &
 % Special rules
@@ -283,8 +349,8 @@ Flyboys (5-15)
 &
 % Weapons
 \begin{itemize}
-    \item Pistols: R8 A1 8+ D1, Assault
-    \item Choppers: R0 A1 4+ D1
+    \item \Pistol
+    \item \Chopper
 \end{itemize}
 &
 % Special rules
@@ -313,18 +379,18 @@ Gunners (5-15)
 % Weapons
 Pick one set:
 \begin{itemize}
-    \item Heavy guns: R20 A2 8+ D2 [Assault, Suppressive 0]
-    \item Knives: R0 A1 4+ D0
+    \item \HeavyGun
+    \item \Knife
 \end{itemize}
 Or:
 \begin{itemize}
-    \item Rocket launchers: R20 A1 7+ D3 [Deadly D10-2 (min 1), Slow]
-    \item Knives: R0 A1 4+ D0
+    \item \RocketLauncher
+    \item \Knife
 \end{itemize}
 Or:
 \begin{itemize}
-    \item Flamethrowers: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
-    \item Cutting torches: R0 A1 4+ D5 [Deadly 2, Slow]
+    \item \Flamethrower
+    \item \CuttingTorch
 \end{itemize}
 &
 % Special rules
@@ -351,8 +417,8 @@ Brutes (4-10)
 &
 % Weapons
 \begin{itemize}
-    \item Brute guns: R16 A1 8+ D1 [Assault]
-    \item Brute weapons: R0 A2 3+ D1
+    \item \BruteGun
+    \item \BruteWeapon
 \end{itemize}
 &
 % Special rules
@@ -379,8 +445,8 @@ Megabrutes (3-6)
 &
 % Weapons
 \begin{itemize}
-    \item Megabrute guns: R16 A2 8+ D1 [Assault]
-    \item Powered brute weapons: R0 A1 3+ D6 [Deadly D5]
+    \item \MegabruteGun
+    \item \PoweredBruteWeapon
 \end{itemize}
 &
 % Special rules
@@ -407,8 +473,8 @@ Raiders (5-10)
 &
 % Weapons
 \begin{itemize}
-    \item Heavy cannons R20 A2 6+ D4 [Area Effect, Deadly 2, Suppressive 1]
-    \item Brute weapons: R0 A2 3+ D1
+    \item \HeavyCannon
+    \item \BruteWeapon
 \end{itemize}
 &
 % Special rules
@@ -443,8 +509,8 @@ Goblin Herd (10-20)
 &
 % Weapons
 \begin{itemize}
-    \item Blunderbuss: R10 A1 6+ D0
-    \item Assorted rusty blades: R0 A1 7+ D0
+    \item \Blunderbuss
+    \item \RustyBlade
 \end{itemize}
 &
 % Special rules
@@ -472,13 +538,13 @@ Grunts (10-20)
 % Weapons
 Pick one set:
 \begin{itemize}
-    \item Guns: R16 A1 8+ D1 [Assault]
-    \item Knives: R0 A1 4+ D0
+    \item \Gun
+    \item \Knife
 \end{itemize}
 Or
 \begin{itemize}
-    \item Pistols: R8 A1 8+ D1, [Assault]
-    \item Choppers: R0 A1 4+ D1
+    \item \Pistol
+    \item \Chopper
 \end{itemize}
 &
 % Special rules
@@ -511,7 +577,7 @@ Beast Herd (10-30)
 8+
 &
 % Weapons
-Claws and teeth: R0 A2 3+ D0
+\ClawsAndTeeth
 &
 % Special rules
 Fearless
@@ -538,8 +604,8 @@ Bikers (5-15)
 &
 % Weapons
 \begin{itemize}
-    \item Biker guns: R16 A4 8+ D1, [Assault]
-    \item Choppers: R0 A1 4+ D1
+    \item \BikerGuns
+    \item \Chopper
 \end{itemize}
 &
 % Special rules
@@ -565,13 +631,13 @@ Blasta-Copters (1-5)
 &
 % Weapons
 \begin{itemize}
-    \item Choppy blades: R0 A5 4+ D2
+    \item \ChoppyBlades
     \item Pick one:
     \begin{itemize}
-        \item Tons of guns: R20 A6 8+ D2 [Assault, Suppressive 0]
-        \item Rocket launchers: R20 A2 7+ D3 [Deadly D10-2 (min 1), slow]
-        \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
-        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item \TonsOfGuns
+        \item \RocketLaunchers
+        \item \TechnoBlaster
+        \item \HeavyFlamethrower
     \end{itemize}
 \end{itemize}
 &
@@ -598,13 +664,13 @@ Snazz-Buggies (1-3)
 &
 % Weapons
 \begin{itemize}
-    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item \SpikyRam
     \item Pick one:
     \begin{itemize}
-        \item Tons of guns: R20 A6 8+ D2 [Assault, Suppressive 0]
-        \item Rocket launchers: R20 A2 7+ D3 [Deadly D10-2 (min 1), slow]
-        \item Techno blaster: R20 A1 7+ D5 [Deadly D10, Slow, Unstable]
-        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item \TonsOfGuns
+        \item \RocketLaunchers
+        \item \TechnoBlaster
+        \item \HeavyFlamethrower
     \end{itemize}
 \end{itemize}
 &
@@ -631,12 +697,12 @@ Guntruck
 &
 % Weapons
 \begin{itemize}
-    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item \SpikyRam
     \item Pick one:
     \begin{itemize}
-        \item Mega cannon: R30 A8 6+ D3 [Area Effect, Deadly 3, Heavy, Slow]
-        \item Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2, Heavy, Slow, Unstable 2]
-        \item Giant flamethrower: R10 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item \MegaCannon
+        \item \TechnoCannon
+        \item \GiantFlamethrower
     \end{itemize}
 \end{itemize}
 &
@@ -672,12 +738,12 @@ Battle Bus
 &
 % Weapons
 \begin{itemize}
-    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item \SpikyRam
     \item Pick one:
     \begin{itemize}
-        \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
-        \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
-        \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+        \item \LotsOfGuns
+        \item \RocketLauncher
+        \item \Flamethrower
     \end{itemize}
 \end{itemize}
 &
@@ -712,18 +778,18 @@ Tank Wagon
 &
 % Weapons
 \begin{itemize}
-    \item Spiky Ram: R0 A1 4+ D5 [Deadly 4]
+    \item \SpikyRam
     \item Pick one:
     \begin{itemize}
-        \item Tons of guns: R20 A6 7+ D2 [Assault, Suppressive 0]
-        \item Rocket launchers: R24 A2 6+ D3 [Deadly D10-2 (min 1), slow]
-        \item Heavy flamethrower: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 1]
+        \item \TonsOfGuns[7+]
+        \item \RocketLaunchers[6+]
+        \item \HeavyFlamethrower
     \end{itemize}
     \item Pick one:
     \begin{itemize}
-        \item Mega cannon: R30 A8 6+ D3 [Area Effect, Deadly 3, Heavy, Slow]
-        \item Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2, Heavy, Slow, Unstable 2]
-        \item Giant flamethrower: R10 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]
+        \item \MegaCannon
+        \item \TechnoCannon
+        \item \GiantFlamethrower
     \end{itemize}
 \end{itemize}
 &
@@ -752,10 +818,10 @@ Dreadwalker
 % Weapons
 Pick any 4 of the following (can mix and match):
 \begin{itemize}
-    \item Powered weapons: R0 A2 3+ D6 [Deadly D5+1] (each additional one increased the A value by 2)
-    \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
-    \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
-    \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+    \item \PoweredWeapon
+    \item \LotsOfGuns
+    \item \RocketLauncher
+    \item \Flamethrower
 \end{itemize}
 
 &
@@ -784,10 +850,10 @@ Killwalkers
 % Weapons
 Pick any 2 of the following (can mix and match):
 \begin{itemize}
-    \item Powered weapons: R0 A2 3+ D6 [Deadly D5+1] (each additional one increased the A value by 2)
-    \item Lots of guns: R20 A3 8+ D2 [Assault, Suppressive 0]
-    \item Rocket launcher: R20 A1 7+ D3 [Deadly D10-2 (min 1), slow]
-    \item Flamethrower: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 0]
+    \item \PoweredWeapon
+    \item \LotsOfGuns
+    \item \RocketLauncher
+    \item \Flamethrower
 \end{itemize}
 
 &
@@ -816,12 +882,8 @@ Artillery Battery (1-3)
 % Weapons
 Pick one:
 \begin{itemize}
-    \item Howitzer: R30 A6 6+ D1 [Area Effect, Heavy, Slow, Suppressive 0]
-    \item Field gun: Choose a type each time it fires:
-    \begin{itemize}
-        \item Frag shell: R30 A4 6+ D1 [Area Effect, Heavy, Slow]
-        \item Tank shell: R30 A1, 6+ D6 [Deadly D10, Heavy, Slow]
-    \end{itemize}
+    \item \Howitzer
+    \item \FieldGun
 \end{itemize}
 
 &
@@ -848,7 +910,7 @@ Mecha-Gun Battery (1-3)
 3+
 &
 % Weapons
-Techno cannon: R30 A3 6+ D5 [Area Effect, Critical 10, Deadly D10+2 Heavy, Slow, Unstable 2]
+\TechnoCannon
 &
 % Special rules
 Tough 2
