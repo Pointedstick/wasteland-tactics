@@ -1,0 +1,28 @@
+% Formatting common to book style documents
+% ========================================
+
+% Be a book with 12 pt font
+% 'oneside' avoids blank pages after chapters
+\documentclass[12pt, oneside]{book}
+
+% Make page numbers show up on all pages
+\pagestyle{plain}
+
+% Use more normal print-style margins
+\usepackage[margin=0.7in]{geometry}
+
+% Be abe to reduce list padding
+\usepackage{enumitem}
+\setlist[itemize]{nosep}
+\setlist[enumerate]{nosep}
+
+% Use two columns
+\usepackage{multicol}
+
+% Add a page border
+% TODO: Find a better one
+\usepackage{wallpaper}
+\CenterWallPaper{1}{page_border_wood.jpg}
+
+% Inherit standard global formatting for everything else
+\input{globals.tex}

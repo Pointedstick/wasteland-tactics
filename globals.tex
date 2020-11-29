@@ -1,0 +1,27 @@
+% Formatting common to all documents
+% ==================================
+
+% It's in English with UTF8 encoding
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Use sans serif fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Add extra space between paragraphs
+\parskip = 0.4\baselineskip
+
+% ...but not so much after sections and subsections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{1.3em}{-\parskip}
+\titlespacing{\subsection}{0pt}{0em}{-\parskip}
+
+% Make subsubsections live on the same line as the text
+\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Reduce the huge amount of space before chapter titles
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}
+\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]

@@ -1,57 +1,5 @@
-% Be landscape
-\documentclass[landscape]{extarticle}
-
-% Use sans serif fonts
-\renewcommand{\familydefault}{\sfdefault}
-
-% Use more normal-ish margins
-\usepackage[margin=0.4in]{geometry}
-
-% Don't number the pages
-\pagenumbering{gobble}
-
-% Use alternating row colors for the tables
-\usepackage[table]{xcolor}
-\definecolor{lightgray}{gray}{0.95}
-\rowcolors{1}{white}{lightgray}
-
-% Define some fixed-width columns
-% Unit column
-\newcolumntype{U}{>{\arraybackslash}m{3cm}}
-% Weapons column
-\newcolumntype{W}{>{\arraybackslash}m{9.5cm}}
-% Special Rules column
-\newcolumntype{S}{>{\arraybackslash}m{7cm}}
-
-% Add extra space between paragraphs
-\parskip = 0.4\baselineskip
-
-% ...but not so much after sections and subsections
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{1.3em}{-\parskip}
-\titlespacing{\subsection}{0pt}{0em}{-\parskip}
-
-% Make subsubsections live on the same line as the text
-\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
-\titleformat{\subsubsection}[runin]
-  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-
-% Reduce the huge amount of space before chapter titles
-\titleformat{\chapter}[display]   
-  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}   
-\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]
-
-% Be abe to reduce list padding
-\usepackage{enumitem}
-\setlist[itemize]{nosep,leftmargin=*}
-\setlist[enumerate]{nosep,leftmargin=*}
-
-% Add a page border
-% TODO: Find a better one
-% \usepackage{wallpaper}
-% \CenterWallPaper{1}{page_border_wood.jpg}
-
-
+% Inherit standard army list-specific formatting
+\input{globals_army_list.tex}
 
 
 
@@ -99,13 +47,7 @@ You might enjoy playing as the Planetary Defense Force if you appreciate militar
 \begin{small}
 
 \section*{Command}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit
@@ -173,13 +115,7 @@ Leadership 1, Price of Failure 1
 
 
 \section*{Spearhead}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit
@@ -371,13 +307,7 @@ Bloodthirsty 1, Tough 3
 
 
 \section*{Troops}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit
@@ -447,13 +377,7 @@ Bodyguards 6+
 
 
 \section*{Fast}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit
@@ -557,13 +481,7 @@ Open, Scouts 1, Tough 5, Vehicle 9+
 
 
 \section*{Transports}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit
@@ -634,13 +552,7 @@ Hardened, Tough 8, Transport 12, Vehicle 8+, Vulnerable 1
 
 
 \section*{Heavy}
-
-\begin{tabular}{UccccWS}
-
-\textbf{Unit} & \textbf{Cost} & \textbf{Move} & \textbf{Will} & \textbf{Life} & \textbf{Weapons} & \textbf{Special Rules} \\
-
-
-\hline
+\input{army_list_table.tex}
 
 
 % Unit

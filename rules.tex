@@ -1,66 +1,16 @@
-% Global formatting
-% ===============
-
-% Be a book with 12 pt font
-% 'oneside' avoids blank pages after chapters
-\documentclass[12pt, oneside]{book}
-
-% Make page numbers show up on all pages
-\pagestyle{plain}
-
-% It's in English with UTF8 encoding
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-
-% Use sans serif fonts
-\renewcommand{\familydefault}{\sfdefault}
-
-% Use more normal-ish margins
-\usepackage[margin=0.7in]{geometry}
-
-% Use two columns
-\usepackage{multicol}
-
-% Add extra space between paragraphs
-\parskip = 0.4\baselineskip
-
-% ...but not so much after sections and subsections
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{1.3em}{-\parskip}
-\titlespacing{\subsection}{0pt}{0em}{-\parskip}
-
-% Make subsubsections live on the same line as the text
-\titlespacing{\subsubsection}{0pt}{\parskip}{1em}
-\titleformat{\subsubsection}[runin]
-  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-
-% Reduce the huge amount of space before chapter titles
-\titleformat{\chapter}[display]   
-  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\huge}   
-\titlespacing*{\chapter}{1.5em}{1em}{3em}[1.5em]
-
-% Be abe to reduce list padding
-\usepackage{enumitem}
-\setlist[itemize]{nosep}
-\setlist[enumerate]{nosep}
-
-% Add a page border
-% TODO: Find a better one
-\usepackage{wallpaper}
-\CenterWallPaper{1}{page_border_wood.jpg}
+% Inherit standard global formatting
+\input{globals_book.tex}
 
 
 
 
-% Content
-% =======
+
+
+\begin{document}
 
 \title{Wasteland Tactics}
 \author{Nate Graham}
 \date{\today\\ Version 0.0.4}
-
-
-\begin{document}
 
 \begin{titlepage}
 \maketitle
