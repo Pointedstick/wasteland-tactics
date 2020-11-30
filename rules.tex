@@ -105,7 +105,7 @@ After all units on the table have been activated, each unit with any Suppression
 
 After this roll, any unit that still has three or more Suppression markers is immediately destroyed! Its warriors panic and flee, are taken prisoner, or become disorganized to the point of combat ineffectiveness.
 
-Then, any unit with models in base contact with enemy models that lost more models during Fight actions than it killed during its own Fight actions against that unit (if applicable) must pass a Will roll or else make a Forced Move Action away from the enemy models that it is fighting.
+Then, any unit with models in base contact with enemy models that lost more models during Fight actions than it killed during its own Fight actions against that unit (if applicable) must pass a Will roll or else make a Withdraw Reaction away from the enemy models that it is fighting.
 
 Next, any unit that failed any Life rolls during the current round must make a Will roll, with a -1 penalty if the unit has lost more than half its starting number of models. If the Will roll is failed, the unit gains a Suppression Marker.
 
@@ -147,7 +147,7 @@ Your warriors are represented by painted models. A model's abilities are describ
 
 \section*{Units}
 
-A unit may consist of a single model, or multiple models acting as a team. Models in multi-model units must remain within 2'' of at least two other models in the unit (or only one, if the unit consists of only two models). If a unit has any models out of this range at the beginning of a round, it takes a Forced Move Action to move them back into range before determining initiative;
+A unit may consist of a single model, or multiple models acting as a team. Models in multi-model units must remain within 2'' of at least two other models in the unit (or only one, if the unit consists of only two models). If a unit has any models out of this range at the beginning of a round, it takes a free Move Action to move them back into range before determining initiative and then gains a Suppression Marker.
 
 Each unit belongs to a certain type, specified in its unit profile:
 
@@ -229,7 +229,7 @@ If any of the Ambushing unit’s models are Scouts or if any of their models arr
     \item \textbf{War Blessing:} The target unit receives a bonus of +1 Shoot and +1 Fight during its next activation.
 \end{itemize}
 
-\subsubsection*{Fearless:} Models in this unit are especially crazed or zealous, and have no regard for their own safety! They ignore Haunted penalties and may not take Defend actions. Whenever the unit would receive a Suppression marker or make a Forced Move Action, instead one model in the unit of its owner’s choice is destroyed. If all models in the unit are Tough, instead one model loses a wound.
+\subsubsection*{Fearless:} Models in this unit are especially crazed or zealous, and have no regard for their own safety! They ignore Haunted penalties and may not take Defend actions. Whenever the unit would receive a Suppression Marker or make a Withdraw Reaction, instead one model in the unit of its owner’s choice is destroyed. If all models in the unit are Tough, instead one model loses a wound.
 
 \subsubsection*{Hardened:} Models in this unit are armored against anti-personnel weapons and suffer no penalties on their Life rolls against weapons with a Damage value of 1 or 2.
 
@@ -282,11 +282,11 @@ A unit may embark on a Transport model by using a Move action to place the of it
 
 Embarked units disembark using a Move action: instead of moving normally, the unit’s models are placed on the battlefield within 3'' of this model. Disembarking units may may not take Fight actions during the current round. If this model is destroyed, embarked units automatically disembark and gain a Suppression marker.
 
-\subsubsection*{Vehicle/Monster X:} This model is a vehicle or monster. It never takes Morale tests, makes Forced Move Actions, or accumulates Suppression markers. It may attack with as many of its weapons as it has remaining wounds during a Shoot or Fight action, may freely fire its weapons at different target units regardless of closeness, and may fire Heavy weapons after moving, but visibility for each ranged weapon must be traced from the weapon's own barrel/emitter/etc. Also, the model's Move value is limited to its number of remaining wounds and it may turn or rotate only once (at any point) per Move or Fight action, may not take Defend actions, cannot embark on transports, and never gains life bonuses from Cover.
+\subsubsection*{Vehicle/Monster X:} This model is a vehicle or monster. It never takes Morale tests, makes Reactions, or accumulates Suppression markers. It may attack with as many of its weapons as it has remaining wounds during a Shoot or Fight action, may freely fire its weapons at different target units regardless of closeness, and may fire Heavy weapons after moving, but visibility for each ranged weapon must be traced from the weapon's own barrel/emitter/etc. Also, the model's Move value is limited to its number of remaining wounds and it may turn or rotate only once (at any point) per Move or Fight action, may not take Defend actions, cannot embark on transports, and never gains life bonuses from Cover.
 
 A Vehicle/Monster model and enemy models in base contact with it may use Move actions to move away from one another without requiring Will rolls, and may take Shoot actions against one another—however they count as moving if they do so, and cannot use weapons with the Area Effect special rule (Spray is permissible though). If enemy models fire upon a Vehicle/Monster model while any of their other models are in base contact with it, only die rolls of 1 will hit their models instead.
 
-When a Vehicle/Monster model makes a Fight action that would bring it into contact with a non-Vehicle/Monster unit that it is not currently in contact with, then after it moves, each target unit must pass a Will roll or else take a Forced Move Action away from the Vehicle/Monster model. 
+When a Vehicle/Monster model makes a Fight action that would bring it into contact with a non-Vehicle/Monster unit that it is not currently in contact with, then after it moves, each target unit must pass a Will roll or else take a Withdraw Reaction away from the Vehicle/Monster model. 
 
 Finally, when a Vehicle/Monster is destroyed, do not remove it; it becomes a wreck/corpse that counts as visibility-blocking Difficult Terrain. And if the name of the rule ends with a number, roll a die when when the model is destroyed; on a roll of X or greater, it explodes or lashes out with its death throes and every model even partially within 4" (including any embarked models) must pass a Life roll with a -1 penalty or else be destroyed. Then remove the model from the table.
 
@@ -306,10 +306,6 @@ A unit may not use a Move action to pass through Impassible Terrain or other mod
 
 A unit must pass a Will roll if it wishes to use a Move action to move any of its models out of base contact with enemy models. If the roll is failed, the Move action is wasted.
 
-\subsubsection*{Forced Move Actions:} At various times, a unit may have to take a Forced Move Action. This means that the unit immediately makes a Move action in the direction indicated, outside of the normal sequence of activation and regardless of whether it had already activated or how many actions it has available. All models in the unit must move the full distance in a straight line, with no maneuvering or routing around obstacles.
-
-After completing the movement, the unit gains a Suppression Marker. However, if any of the unit's models cannot complete the movement because they would come into base contact with impassible terrain or any enemy models, the unit is destroyed; morale collapses after finding the retreat corridor blocked or filled with enemy forces!
-
 
 
 
@@ -319,6 +315,8 @@ A unit with none of its models in base contact with enemy models and armed with 
 Each model in the unit that can see at least one model in the enemy unit it is targeting fires one of its ranged weapons that is within range.
 
 If the targeted unit is benefiting from the effects of an area of Concealment or Cover, but some models in the unit are nonetheless completely visible, the shooting unit may optionally focus on only the fully visible models. In this case, against this attack, those models lose their Concealment or Cover bonuses, but all other models are no longer considered visible at all.
+
+Before rolling to hit, the targeted unit may make a Reaction, if any are applicable.
 
 For each model able to shoot, choose one of the its ranged weapons and make a number of Shoot rolls equal to the weapon’s Attacks characteristic. For each successful Shoot roll, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon. For each failed Life roll, a visible model in the unit of its owner’s choice is destroyed.
 
@@ -334,7 +332,7 @@ A unit armed with at least one weapon with a range of R0 may take a Fight action
 
 First, the unit designates one or more enemy units within its movement range as charge targets.
 
-Each targeted enemy unit which has one or fewer Suppression Markers and is not currently in base contact with any of your models may then optionally gain an additional Suppression Marker and make a Will roll. If the roll is passed, it immediately takes a free Shoot action against the unit charging at it. During this free Shoot action, all of its ranged weapons are automatically considered to be in range.
+Each targeted enemy unit which has one or fewer Suppression Markers and is not currently in base contact with any of your models may then make a Reaction.
 
 After this has been resolved, the charging unit makes a free Move action. During this free Move action, all of its models are required to move in a straight line directly toward the closest enemy model in a targeted unit, and at least one of the unit's models must end up in base contact with at least one model in each of the designated target units.
 
@@ -356,7 +354,7 @@ For each successful Fight roll, the targeted unit makes a Life roll with a penal
 \section*{Defend}
 A unit may take a Defend action as its first action, after which it cannot take a Move, Fight, or Defend action as its second action. For the duration of the current round, the unit gains bonuses of +1 to its Life rolls against shooting attacks and +1 to its Will rolls for all purposes except Cast actions or resisting enemy Cast actions.
 
-A unit with any Suppression Markers always gains the benefits of the Defend action, no matter what other action it takes. A unit with no Suppression Markers may voluntarily take one when fired upon, but before the firing unit has rolled to hit. This will provide it with the benefits of the Defend action when it makes its Life rolls (if any).
+A unit with any Suppression Markers always gains the benefits of the Defend action, no matter what other action it takes.
 
 To make it easier to see that the unit has taken a Defend action, you may turn one of its models on its side.
 
@@ -381,6 +379,37 @@ A scoring unit may take an Interact action to attempt to secure a mission object
 \end{itemize}
 
 What happens if the action succeeds depends on the mission being played.
+
+
+
+
+
+
+\chapter*{Reactions}
+
+At various times, a unit may be eligible or required to make a Reaction, as mentioned in other parts of the rules.
+
+Reactions are always made outside of the normal sequence of activation and regardless of whether the reacting unit had already activated or how many actions it has available. After making a Reaction, the reacting unit always gains a suppression marker.
+
+Here are the  different reactions that a unit can make:
+
+
+
+\section*{Withdraw}
+The unit immediately makes a Move action away from whatever enemy unit provoked the Reaction. All models in the unit must move the full distance in a straight line, with no maneuvering or routing around obstacles permitted.
+
+If any of the unit's models cannot complete the movement because they would come into base contact with impassible terrain or any enemy models, the unit is destroyed; morale collapses after finding the retreat corridor blocked or filled with enemy forces!
+
+
+
+\section*{Dig In}
+The unit immediately gains the benefits of the Defend action.
+
+
+
+\section*{Counter-Attack}
+This Reaction may only be done if the distance between the two units 18`` away or closer. The reacting unit makes a Will roll. If the roll is passed, it immediately takes a free Shoot action against the unit that provoked the reaction. If it is reacting to a Fight action, all of its ranged weapons are automatically considered to be in range during this free Shoot action.
+
 
 
 
@@ -421,7 +450,7 @@ Every model has one or more weapons, each having five characteristics, expressed
 
 \subsubsection*{Sniper:} This weapon may be used to fire at units that are not the closest visible target--including Leadership units--without requiring a Will roll. However the weapon's Damage value is reduced to 0 against Vehicles without the Open rule.
 
-\subsubsection*{Suppressive/Terrifying X:} This weapon's effects are intensely frightening. Once per activation (your choice as to when), units hit with this weapon must immediately pass a Will roll with a -X penalty or else gain a Suppression Marker. If the rule is called ``Terrifying'', a unit failing its Will roll instead makes a Forced Move Action away from the firing unit.
+\subsubsection*{Suppressive/Terrifying X:} This weapon's effects are intensely frightening. Once per activation (your choice as to when), units hit with this weapon must immediately pass a Will roll with a -X penalty or else gain a Suppression Marker. If the rule is called ``Terrifying'', a unit failing its Will roll instead makes a Withdraw Reaction away from the firing unit.
 
 If the unit is firing multiple Suppressive and/or Terrifying weapons at the same target, apply only the most severe effects, but increase the penalty on the target unit's Will roll by one for each additional Suppressive or Terrifying weapon in the firing unit.
 
