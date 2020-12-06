@@ -33,6 +33,7 @@ You might enjoy playing as the Orc Raiders if you like falling upon your enemies
 \newcommand{\ClawsAndTeeth}[1][3+]{\textbf{Claws and Teeth}: R0 A2 {#1} D0}
 \newcommand{\CuttingTorch}[1][4+]{\textbf{Cutting Torch}: R0 A1 {#1} D5 [Deadly 2, Slow]}
 \newcommand{\HugeBossChopper}[1][2+]{\textbf{Huge Boss Chopper}: R0 A4 {#1} D4 [Deadly 2]}
+\newcommand{\HugeBruteChopper}[1][2+]{\textbf{Huge Brute Chopper}: R0 A2 {#1} D3 [Deadly 2]}
 \newcommand{\Knife}[1][4+]{\textbf{Knife}: R0 A1 {#1} D0}
 \newcommand{\PoweredBossWeapon}[1][3+]{\textbf{Powered Boss Weapon}: R0 A2 {#1} D6 [Deadly D5+1]}
 \newcommand{\PoweredBruteWeapon}[1][4+]{\textbf{Powered Brute Weapon}: R0 A1 {#1} D6 [Deadly D5]}
@@ -42,6 +43,7 @@ You might enjoy playing as the Orc Raiders if you like falling upon your enemies
 \newcommand{\ChoppyBlades}[1][4+]{\textbf{Choppy Blades}: R0 A5 {#1} D2}
 \newcommand{\PoweredWeapon}[1][3+]{\textbf{Powered Weapon}: R0 A2 {#1} D6 [Deadly D5+1] (each additional one increased the A value by 2)}
 \newcommand{\SpikyRam}[1][4+]{\textbf{Spiky Ram}: R0 A1 {#1} D5 [Deadly 4]}
+\newcommand{\KillRoller}[1][4+]{\textbf{Kill Roller} R0 A6 {#1} D3 [Area Effect, Deadly 2, Suppressive 1]}
 
 
 % Ranged weapons
@@ -50,6 +52,7 @@ You might enjoy playing as the Orc Raiders if you like falling upon your enemies
 \newcommand{\Blunderbuss}[1][6+]{\textbf{Blunderbuss}: R10 A1 {#1} D0}
 \newcommand{\Gun}[1][8+]{\textbf{Gun}: R16 A1 {#1} D1 [Assault]}
 \newcommand{\HeavyCannon}[1][6+]{\textbf{Heavy Cannon} R20 A2 {#1} D4 [Area Effect, Deadly 2, Suppressive 1]}
+\newcommand{\HoppingBombs}[1][3+]{\textbf{Hopping Bombs} [R20 A1 {#1} D4 Assault, Deadly D10-2 (min 1), May only be used once per game]}
 \newcommand{\Pistol}[1][8+]{\textbf{Pistol}: R8 A1 {#1} D1 [Assault]}
 \newcommand{\SubmachineGun}[1][8+]{\textbf{Submachine Gun}: R16 A2 {#1} D1 [Assault]}
 
@@ -158,7 +161,7 @@ Tough 3
 Support (Reach)
 &
 % Upgrades
-
++20 pts: add a Megasuit (Life improved to 2+, Move reduced to 4, gain the Hardened rule)
 
 \\
 
@@ -234,6 +237,15 @@ Tough 2
 Repair 6+
 &
 % Upgrades
++20 pts: add a Megasuit (Life improved to 3+, Move reduced to 4, gain the Hardened rule)
+
+\hrulefill
+
++40 pts: One of the following:
+\begin{itemize}
+    \item Add a Force Field (Gains Acute Senses, and Support (Hardened) special rules)
+    \item Replace Techno Blaster with \textbf{Teleportal Blaster} (R40 A5 8+ D8 [Area Effect, Deadly 2D10, Heavy, Slow, Terrifying 1, Unstable 3])
+\end{itemize}
 
 
 \\
@@ -374,7 +386,8 @@ Stealth 1
 Strider (difficult terrain)
 &
 % Upgrades
-
++13 points: one model may be upgraded to a Brute (but with a Move value of 6) and take any Brute upgrades
+ 
 
 \\
 
@@ -407,6 +420,7 @@ Bloodthirsty 1
 Flying
 &
 % Upgrades
++13 points: one model may be upgraded to a Brute (but with a Move value of 10) and take any Brute upgrades
 
 
 \\
@@ -449,6 +463,11 @@ Or:
 Bloodthirsty 1
 &
 % Upgrades
++10 pts: One model in 5 may replace its ranged weapons with a \TechnoBlaster
+
+\hrulefill
+
++10 pts each: May take up to four \HoppingBombs
 
 
 \\
@@ -480,7 +499,19 @@ Bloodthirsty 1
 Tough 2
 &
 % Upgrades
+Free: Any model may remove its Gun and increase the A value of its \textbf{Brute Weapons} to 3
 
+\hrulefill
+
++4 pts each: Any model may replace its Gun with a \SubmachineGun
+
+\hrulefill
+
++10 pts each: Any model may replace its Brute Weapons with a \HugeBruteChopper[3+] or a \PoweredBruteWeapon
+
+\hrulefill
+
++20 pts: One model may add a War Banner (gain the ``Support (Bloodthirsty 1)'' rule)
 
 \\
 
@@ -619,6 +650,7 @@ Or
 Bloodthirsty 1
 &
 % Upgrades
++13 points: one model may be upgraded to a Brute and take any Brute upgrades
 \end{tabular}
 
 
@@ -807,6 +839,7 @@ Vehicle 7+
 Vulnerable 2
 &
 % Upgrades
++10 points: Replace Open rule with Hardened rule
 \end{tabular}
 
 
@@ -857,6 +890,7 @@ Vehicle 7+
 Vulnerable
 &
 % Upgrades
+Free: Replace Open rule with Hardened rule
 \end{tabular}
 
 
@@ -913,7 +947,11 @@ Vehicle 7+
 Vulnerable 1
 &
 % Upgrades
+Free: Replace Open rule with Hardened rule
 
+\hrulefill
+
++20 pts: Replace Spiky Ram with a \KillRoller
 
 \\
 
@@ -953,7 +991,7 @@ Tough 6
 Vehicle 7+
 &
 % Upgrades
-
++10 points: replace any weapon with a \TechnoBlaster
 
 \\
 
@@ -993,6 +1031,7 @@ Tough 4
 Vehicle 7+
 &
 % Upgrades
++10 points: replace any weapon with a \TechnoBlaster
 
 
 \\
