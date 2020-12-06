@@ -29,6 +29,7 @@ You might enjoy playing as the Planetary Defense Force if you appreciate militar
 % Handheld
 \newcommand{\CombatKnife}[1][6+]{\textbf{Combat Knife}: R0 A1 {#1} D0}
 \newcommand{\DemoCharges}[1][6+]{\textbf{Demo Charges}: R0 A1 {#1} D6 Critical 9+, Deadly D5+2, Slow, Unstable 1, May only be used against Vehicle or Monster models}
+\newcommand{\EnergyFist}[1][6+]{\textbf{Energy Fist}: R0 A1 {#1} D6 [Deadly 3]}
 \newcommand{\EnergySword}[1][5+]{\textbf{Energy Sword}: R0 A2 {#1} D6}
 \newcommand{\HeavyMeleeWeapon}[1][6+]{\textbf{Heavy Melee Weapon}: R0 A2 {#1} D1}
 \newcommand{\HugeMeleeWeapon}[1][4+]{\textbf{Huge Melee Weapon}: R0 A2 {#1} D3 [Deadly 2]}
@@ -43,6 +44,7 @@ You might enjoy playing as the Planetary Defense Force if you appreciate militar
 % --------------
 % Handheld
 \newcommand{\AntimatterGun}[1][6+]{\textbf{Antimatter Gun}: R20 A1 {#1} D6, [Deadly 2, Unstable]}
+\newcommand{\AntimatterPistol}[1][6+]{\textbf{Antimatter Pistol}: R10 A1 {#1} D6, [Deadly 2, Unstable]}
 \newcommand{\AutocannonCrewed}[1][6+]{\textbf{Autocannon}: R30 A2 {#1} D4 [Deadly 2, Crew-Served, Heavy, Slow]}
 \newcommand{\BattlePistol}[1][5+]{\textbf{Battle Pistol}: R10 A1 {#1} D2 [Assault]}
 \newcommand{\BattleRifle}[1][5+]{\textbf{Battle Rifle}: R20 A1 {#1} D2}
@@ -59,15 +61,17 @@ You might enjoy playing as the Planetary Defense Force if you appreciate militar
 \newcommand{\SniperRifle}[1][5+]{\textbf{Sniper Rifle}: R30 A1 {#1} D6 [Crew-Served, Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]}
 
 % Vehicle-borne
+\newcommand{\AntimatterCannon}[1][6+]{\textbf{Antimatter Cannon}: R30 A3 {#1} D6, [Area Effect, Deadly 2, Unstable]}
 \newcommand{\AntiTankCannon}[1][5+]{\textbf{Anti-Tank Cannon}: R40 A1 {#1} D8 [Critical 9+, Deadly D10+1, Heavy, Slow]}
 \newcommand{\ArtilleryCannon}[1][5+]{\textbf{Artillery Cannon}: R80 A8 {#1} [Heavy, Indirect, Slow, Suppressive 1]}
 \newcommand{\Autocannon}[1][5+]{\textbf{Autocannon}: R30 A2 {#1} D4 [Deadly 2, Heavy, Slow]}
+\newcommand{\AutoGrenadeLauncher}[1][6+]{\textbf{Auto Grenade Launcher}: R30 A6 {#1} D1 [Area Effect, Suppressive 1]}
 \newcommand{\GatlingCannon}[1][5+]{\textbf{Gatling Cannon}: R30 A7 {#1} D2 [Heavy, Suppressive 3]}
 \newcommand{\HeavyFlamethrower}{\textbf{Heavy Flamethrower}: R8 A6 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
 \newcommand{\HeavyMachineGun}[1][5+]{\textbf{Heavy Machine Gun}: R20 A3 {#1} D2 [Heavy, Suppressive 1]}
-\newcommand{\HeavyMachineGuns}[1][5+]{\textbf{Heavy Machine Guns}: R20 A6 {#1} D2 [Heavy, Suppressive 1]}
 \newcommand{\GiantFlamethrower}{\textbf{Giant Flamethrower}: R10 A12 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
 \newcommand{\LongRangeCannon}[1][5+]{\textbf{Long-Range Cannon}: R40 A6 {#1} D5 [Area Effect, Deadly 3, Heavy, Slow]}
+\newcommand{\MagmaCannon}[1][6+]{\textbf{Magma Cannon}: R20 A1 {#1} D8 [Critical 8+, Deadly 2D5, Slow]}
 \newcommand{\RocketLauncher}[1][5+]{\textbf{Rocket Launcher}: R40 A1 {#1} D6 [Critical 9+, Deadly D10, Heavy, Slow]}
 \newcommand{\SiegeCannon}[1][5+]{\textbf{Siege Cannon} R20 A8 {#1} D8 [Area Effect, Deadly D5+3, Heavy, Slow, Terrifying 1]}
 
@@ -125,8 +129,6 @@ Command Squad (5)
 \Rifle[5+]
 
 \CombatKnife[5+]
-
-One model also has an \EnergySword
 &
 % Special rules
 Leadership 2
@@ -134,6 +136,7 @@ Leadership 2
 Medic 8+
 &
 % Upgrades
++5 points each: One model may replace its Combat Knife with an \EnergySword{} and/or its Rifle with an \AntimatterPistol[5+]
 
 
 
@@ -167,6 +170,7 @@ Leadership 1
 Price of Failure 1
 &
 % Upgrades
++5 points: Replace Energy Sword with an \EnergyFist
 
 
 \end{tabular}
@@ -503,7 +507,17 @@ Reach
 Tough 2
 &
 % Upgrades
++5 points each: One model may replace its Heavy Melee Weapon with an \EnergySword{} and/or its Carbine with an \AntimatterPistol
 
+\hrulefill
+
++10 points each: Two other models may replace their Carbines with one of the following (you may mix and match):
+\begin{itemize}
+    \item \Flamethrower
+    \item \GrenadeLauncher
+    \item \MagmaGun
+    \item \AntimatterGun
+\end{itemize}
 
 
 \\
@@ -542,6 +556,7 @@ Vehicle 6+
 Vulnerable 1
 &
 % Upgrades
++10 points: Replace Heavy Machine Gun with a \HeavyFlamethrower
 
 
 
@@ -572,7 +587,6 @@ Each model also has one of the following (you may mix and match):
     \item \HeavyFlamethrower
     \item \HeavyMachineGun
     \item \Autocannon
-    \item \RocketLauncher
 \end{itemize}
 &
 % Special rules
@@ -585,6 +599,11 @@ Tough 5
 Vehicle 9+
 &
 % Upgrades
++10 points: Replace Open rule with Hardened rule
+
+\hrulefill
+
++10 points: Replace its weapon with an \AutoGrenadeLauncher{} or a \RocketLauncher
 \end{tabular}
 
 
@@ -630,6 +649,7 @@ Vehicle 7+
 Vulnerable 1
 &
 % Upgrades
++10 points: Replace its weapon with an \AutoGrenadeLauncher
 
 
 
@@ -641,7 +661,7 @@ Vulnerable 1
 Heavy APC
 &
 % Cost
-60
+70
 &
 % Move
 10      
@@ -674,6 +694,7 @@ Vehicle 8+
 Vulnerable 1
 &
 % Upgrades
++10 points: May replace one of its weapons with an \AutoGrenadeLauncher{} or a \RocketLauncher
 \end{tabular}
 
 
@@ -704,7 +725,7 @@ Battle Tank
 % Weapons
 \CrushingTracks
 
-\HeavyMachineGuns
+\HeavyMachineGun
 
 Pick one:
 \begin{itemize}
@@ -724,6 +745,13 @@ Vehicle 8+
 Vulnerable 1
 &
 % Upgrades
+Add a pair of any of the following:
+\begin{itemize}
+    \item +20 points: \HeavyMachineGun
+    \item +20 points: \HeavyFlamethrower
+    \item +40 points: \AntimatterCannon
+    \item +40 points: \MagmaCannon
+\end{itemize}
 
 
 
@@ -765,6 +793,7 @@ Vehicle 8+
 Vulnerable 1
 &
 % Upgrades
+Free: Replace Heavy Machine Gun with a \HeavyFlamethrower
 
 
 
