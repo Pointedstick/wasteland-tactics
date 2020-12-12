@@ -1,0 +1,373 @@
+% Inherit standard army list-specific formatting
+\input{../globals/globals_army_list.tex}
+
+
+
+
+
+
+\begin{document}
+
+\title{Blank Army}
+
+\maketitle
+
+The Blank Army is an amorphous force of nameless warriors who fight for no particular reason, without any goals whatsoever.
+
+You might enjoy playing as the Blank Army if you a believer in the Tabula Rasa theory.
+
+
+
+
+
+
+% Common weapon definitions
+% =========================
+
+% Melee weapons
+% -------------
+% Handheld
+\newcommand{\CombatKnife}[1][6+]{\textbf{Combat Knife}: R0 A1 {#1} D0}
+
+% Vehicle-borne
+\newcommand{\Ram}[1][7+]{\textbf{Ram}: R0 A1 {#1} D4 [Deadly 4]}
+
+
+% Ranged weapons
+% --------------
+% Handheld
+\newcommand{\Rifle}[1][6+]{\textbf{Rifle}: R20 A1 {#1} D1}
+
+% Vehicle-borne
+\newcommand{\TankGun}[1][5+]{\textbf{Tank Gun}: R40 A6 {#1} D5, [Area Effect, Deadly 2]}
+
+
+
+
+
+
+\section*{Army-specific rules}
+
+
+\subsection*{New unit rules}
+
+\subsubsection*{A Unit Rule:} The unit can do a thing.
+
+
+
+\subsection*{New weapon rules}
+
+\subsubsection*{A Weapon Rule:} This weapon does a thing.
+
+
+
+\subsection*{Orders}
+
+\subsubsection*{An Order} The target unit benefits from some effect.
+
+
+
+\subsection*{Powers}
+
+XXXXXX units gain the following additional power:
+
+\subsubsection*{A Psychic Power:} Something happens!
+
+
+\pagebreak
+
+
+
+\begin{small}
+
+\section*{Command}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXX (10)
+&
+% Cost
+XX
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+6+
+&
+% Weapons
+\Rifle[5+]
+
+\CombatKnife[5+]
+&
+% Special rules
+Leadership 2
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+
+
+
+\\
+
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Spearhead}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXX (10)
+&
+% Cost
+XX
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+6+
+&
+% Weapons
+\Rifle[5+]
+
+\CombatKnife[5+]
+&
+% Special rules
+Leadership 2
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+
+
+
+
+\\
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Troops}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXX (10)
+&
+% Cost
+XX
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+6+
+&
+% Weapons
+\Rifle[5+]
+
+\CombatKnife[5+]
+&
+% Special rules
+Leadership 2
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+
+
+
+\\
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Fast}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXX (10)
+&
+% Cost
+XX
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+6+
+&
+% Weapons
+\Rifle[5+]
+
+\CombatKnife[5+]
+&
+% Special rules
+Leadership 2
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+
+
+
+\\
+\end{tabular}
+
+
+
+
+
+
+
+
+\section*{Transports}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXX APC
+&
+% Cost
+70
+&
+% Move
+10      
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\Ram
+
+Pick two (you may mix and match):
+\begin{itemize}
+    \item \Rifle
+    \item \TankGun
+\end{itemize}
+&
+% Special rules
+Hardened
+
+Tough 8
+
+Transport 12
+
+Vehicle 8+
+
+Vulnerable 1
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+\end{tabular}
+
+
+
+
+
+
+
+\section*{Heavy}
+\input{army_list_table.tex}
+
+
+% Unit
+XXXXX Tank
+&
+% Cost
+XXX
+&
+% Move
+10
+&
+% Will
+6+
+&
+% Life
+0+
+&
+% Weapons
+\Ram
+
+Pick one:
+\begin{itemize}
+    \item \TankGun
+    \item \TankGun
+\end{itemize}
+&
+% Special rules
+Hardened
+
+Tough 10
+
+Vehicle 8+
+
+Vulnerable 1
+&
+% Upgrades
++5 points: An upgrade (gains the XXXXX rule)
+
+\hrulefill
+
++20 points: Another upgrade (gains the YYYY rule)
+
+
+
+\\
+\end{tabular}
+
+\end{small}
+
+
+\end{document}
