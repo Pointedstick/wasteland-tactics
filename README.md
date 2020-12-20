@@ -6,6 +6,7 @@ The rules are fundamentally simple to encourage fast play, yet combine together 
 Features include:
 - Basic rules (not including army lists) which fit into ten pages
 - Alternating unit activation
+- Reactions
 - Sophisticated leadership, morale, and unit suppression mechanics
 - Single roll to hit/wound and single save roll
 - Interesting missions with complex, real world style objectives
