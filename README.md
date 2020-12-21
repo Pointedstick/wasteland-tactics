@@ -4,7 +4,8 @@ Wasteland tactics is a tabletop wargame simulating the fast-paced randomness and
 The rules are fundamentally simple to encourage fast play, yet combine together in deep and interesting ways. The game can be played at any scale: a skirmish between ragtag bands of desperadoes will take under an hour to play, while a company-scale battle with hundreds of soldiers and a dozen monsters and war machines is feasible in under four hours.
 
 Features include:
-- Basic rules (not including army lists) which fit into ten pages
+- Compact set of basic rules that interact in complex ways
+- Engaging and technically interesting player choices rather than endless sterile die rolling
 - Alternating unit activation
 - Reactions
 - Sophisticated leadership, morale, and unit suppression mechanics
