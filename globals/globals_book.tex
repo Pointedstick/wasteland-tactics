@@ -14,6 +14,22 @@
 % Use two columns
 \usepackage{multicol}
 
+% Allow hyperlinks
+\usepackage{hyperref}
+
+% Make hyperlinks look pretty
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    urlcolor={blue}
+}
+
+% re-define TOC command to not have a leading page break for book format documents
+\makeatletter
+\newcommand*{\toccontents}{\@starttoc{toc}}
+\makeatother
+
 % Add a page border
 % TODO: Find a better one
 \usepackage{wallpaper}
