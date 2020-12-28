@@ -334,29 +334,39 @@ A unit must pass a Will roll if it wishes to use a Move Action to move any of it
 
 
 \section*{Shoot}
+\subsection*{1. Choose targets}
 A unit with none of its models in base contact with enemy models and armed with at least one ranged weapon may fire its ranged weapons at the closest enemy unit.
 
 Single-model units within 3'' of any other enemy units may only be targeted if they are the closest model, unless they have the \textit{Monster} or \textit{Vehicle} rule. The unit may pass a Will roll to be able to target any other unit that is not the closest, and have different models fire at different target units. However if the roll is failed, the resulting confusion causes the unit to suffer a -1 Shoot penalty for the remainder of the Action.
 
-Each targeted unit may optionally pass a Will roll to make a Reaction; if the Roll fails, the targeted unit instead gains a Suppression Marker. After any Reactions have been resolved, the Shoot Action ends if no enemy models remain visible and within range. Otherwise, each model in the unit that can see at least one model in the enemy unit it is targeting fires one of its ranged weapons that is within range.
+\subsection*{2. Targets may react}
+Each targeted unit may optionally pass a Will roll to make a Reaction; if the Roll fails, the targeted unit instead gains a Suppression Marker. After any Reactions have been resolved, the Shoot Action ends if no enemy models remain visible and within range.
 
-For each model able to shoot, choose one of its ranged weapons and make a number of Shoot rolls equal to the weapon's Attacks characteristic. For each successful Shoot roll, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon. For each failed Life roll, a visible model in the unit of its owner's choice is destroyed. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
+\subsection*{3. Make Shoot rolls}
+For each model in the shooting unit that can see at least one model in its target enemy unit, choose one of its ranged weapons that is within range and make a number of Shoot rolls equal to the weapon's Attacks characteristic.
+
+\subsection*{4. Opponent makes Life rolls}
+For each successful Shoot roll, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon used. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
+
+\subsection*{5. Remove destroyed models}
+For each failed Life roll, a visible model in the unit of its owner's choice is destroyed.
 
 Only models in the targeted unit that are visible to one or more firing models may be removed as casualties; if more kills would be scored than there are visible enemy models, the excess damage is lost.
 
-If any models in the targeted unit are in base contact with models from any of your units, each failed Shoot roll is resolved as a hit against one of your units (the other player decides which!).
+If any models in the targeted unit are in base contact with models from any of your units, each failed Shoot roll is resolved as a hit against one of those units (the other player decides which!).
 
 
 
 
 \section*{Fight}
+\subsection*{1. Choose targets}
 A unit armed with at least one melee weapon may take a Fight Action to attack enemy units in hand-to-hand combat. Choose one or more enemy units within the unit's movement range as targets.
 
+\subsection*{2. Targets may react}
 Each targeted unit that has no models in base contact with the unit may optionally pass a Will roll to make a Reaction; if the Roll fails, the targeted unit instead gains a Suppression Marker. After any Reactions have been resolved, the unit makes a free Move Action during which all of its models are required to move in a straight line directly toward the closest enemy model in a targeted unit. If none of the unit's models end up in base contact with any models in any of the target units, the Fight Action ends.
 
-To strike blows in the ensuing melee combat, a model must be in base contact with either an enemy model, or a friendly model that is in base contact with an enemy model.
-
-Each model able to strike blows targets the closest enemy unit with models in base contact. If this is unclear, or all valid targets are equidistant, you may choose the target unit. Then choose one of the model's melee weapons and make a number of Fight rolls equal to that weapon's Attacks characteristic, subject to the following modifiers:
+\subsection*{3. Make Fight rolls}
+For each model that is in base contact with either an enemy model or a friendly model in base contact with an enemy model, choose one of the model's melee weapons and make a number of Fight rolls equal to that weapon's Attacks characteristic, subject to the following modifiers:
 
 \begin{itemize}
  \item +1 bonus for each Suppression Marker on the enemy unit
@@ -364,7 +374,13 @@ Each model able to strike blows targets the closest enemy unit with models in ba
  \item +2 bonus if the model's unit outnumbers the target unit 3:1 or more
 \end{itemize}
 
-For each successful Fight roll, the targeted unit makes a Life roll with a penalty equal to the Damage characteristic of the melee weapon. For each failed Life roll, a model of its owner's choice is destroyed, starting with models not in base contact with enemy models. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
+When fighting multiple enemy units, each model's Fight rolls must be allocated to its closest enemy unit with models in base contact. For any model, if this is unclear or all valid targets are equidistant, you may choose its target unit.
+
+\subsection*{4. Opponent makes Life rolls}
+For each successful Fight roll, the targeted unit makes a Life roll with a penalty equal to the Damage characteristic of the melee weapon used.
+
+\subsection*{5. Remove destroyed models}
+For each failed Life roll, a model of its owner's choice is destroyed, starting with models not in base contact with enemy models. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
 
 
 
