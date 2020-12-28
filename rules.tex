@@ -452,15 +452,15 @@ This Reaction may only be chosen if the distance between the two units is 15'' a
 
 \chapter{Weapons}
 
-Every model has one or more weapons, each having five characteristics, expressed like so:
+Every model has one or more weapons, each having up to five characteristics, expressed like so:
 
-\textbf{Pistol: R10 A1 5+ D1 [Assault]}
+\textbf{Pistol}: R10 5+ D1 [Assault]
 
 \begin{itemize}
-    \item \textbf{R[number]:} The weapon's range. A value of 0 indicates a melee weapon; otherwise, it is a ranged weapon. If there are two numbers, the first one is a minimum range, measured to the farthest model in the target unit.
-    \item \textbf{A[number]:} The weapon's number of attacks. Roll this many dice per Shoot or Fight Action when using this weapon.
-    \item \textbf{[number]+:} The weapon's chance of hitting its target. When making a Shoot or Fight Action with this weapon, each attack roll must be equal to or greater than the number to score a hit. ``Autohit'' means that all of the weapon's attacks automatically hit!
-    \item \textbf{D[number]:} The weapon's damage. Subtract this number from Life rolls made by models struck with this weapon.
+    \item \textbf{R[number]:} The weapon's range. If present, it is a ranged weapon; otherwise it is a melee weapon. If there are two numbers, the first one is a minimum range, measured to the farthest model in the target unit.
+    \item \textbf{A[number]:} The weapon's number of attacks. If present, roll this many dice per Shoot or Fight Action when using this weapon. Otherwise roll one die.
+    \item \textbf{[number]+:} The weapon's chance of hitting its target. Each Shoot or Fight roll must be equal to or greater than the number to score a hit. ``Autohit'' means that all of the weapon's attacks automatically hit!
+    \item \textbf{D[number]:} The weapon's damage. If present, subtract this number from Life rolls made by models struck with this weapon.
     \item \textbf{[special rules]:} This weapon's special rules.
 \end{itemize}
 
