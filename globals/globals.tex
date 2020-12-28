@@ -22,7 +22,10 @@
 % ...but not so much after sections and subsections
 \usepackage{titlesec}
 \titlespacing{\section}{0pt}{1.3em}{-\parskip}
-\titlespacing{\subsection}{0pt}{0em}{-\parskip}
+\titlespacing{\subsection}{0pt}{0.5em}{-\parskip}
+
+% Make subsection headers a bit smaller
+\titleformat*{\subsection}{\normalsize\bfseries}
 
 % Make subsubsections live on the same line as the text
 \titlespacing{\subsubsection}{0pt}{\parskip}{1em}
