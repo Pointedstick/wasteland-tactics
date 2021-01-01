@@ -1,0 +1,1180 @@
+% Inherit standard army list-specific formatting
+\input{../globals/globals_army_list.tex}
+
+
+
+
+
+
+\begin{document}
+
+\title{Gothic Legion}
+
+\maketitle
+
+The Gothic Legion is an elite force of superhuman warriors armed and armored with the very finest equipment available. Gothic Legionaires are hard-hitting heavy infantry soldiers who tear through their enemies like avenging angels.
+
+You might enjoy playing as Gothic Legion if you like elite yet tactically flexible soldiers with a lot of fancy weapons.
+
+
+
+
+
+
+% Common weapon definitions
+% =========================
+
+% Melee weapons
+% -------------
+% Handheld
+\newcommand{\CombatKnife}[1][4+]{\textbf{Combat Knife}: {#1} D1}
+\newcommand{\DemoCharges}[1][4+]{\textbf{Demo Charges}: {#1} D6 Critical 9+, Deadly D5+2, Slow, Unstable 1, May only be used against Vehicle or Monster models}
+\newcommand{\EnergyFist}[1][5+]{\textbf{Energy Fist}: {#1} D6 [Deadly 4]}
+\newcommand{\EnergyFistLeader}[1][4+]{\textbf{Energy Fist}: A2 {#1} D6 [Deadly 4]}
+\newcommand{\EnergySword}[1][4+]{\textbf{Energy Sword}: A2 {#1} D6 [Deadly 2]}
+\newcommand{\EnergySwordLeader}[1][3+]{\textbf{Energy Sword}: A3 {#1} D6 [Deadly 2]}
+\newcommand{\Sword}[1][4+]{\textbf{Sword}: A2 {#1} D2}
+
+
+
+
+
+
+% Vehicle-borne
+\newcommand{\CrushingTracks}[1][9+]{\textbf{Crushing Tracks}: A3 {#1} D8 [Deadly 4]}
+\newcommand{\HeavyEnergyFist}[1][4+]{\textbf{Heavy Energy Fist}: A3 {#1} D7 [Deadly 5]}
+\newcommand{\Ram}[1][7+]{\textbf{Ram}: {#1} D4 [Deadly 4]}
+
+
+% Ranged weapons
+% --------------
+% Handheld
+\newcommand{\PlasmaRifle}[1][4+]{\textbf{Plasma Rifle}: R20 {#1} D6, [Deadly 2, Unstable 1]}
+\newcommand{\PlasmaPistol}[1][4+]{\textbf{Plasma Pistol}: R10 {#1} D6, [Deadly 2, Unstable 1]}
+\newcommand{\BattlePistol}[1][4+]{\textbf{Battle Pistol}: R10 {#1} D2}
+\newcommand{\BattleRifle}[1][4+]{\textbf{Battle Rifle}: R20 {#1} D2}
+
+\newcommand{\BattleRifleMulti}[1][3+]{\textbf{Battle Rifle}: Pick one ammo type each time the squad fires: \begin{itemize}
+    \item Firestorm shells: R20 {#1} D2 [Area Effect, Terrifying 0]
+    \item Armor-piercing shells: R20 {#1} D4
+\end{itemize}
+}
+
+
+\newcommand{\CombatShotgun}[1][5+]{\textbf{Combat Shotgun}: R12 A2 {#1} D2 [Assault]}
+\newcommand{\Flamethrower}{\textbf{Flamethrower}: R8 A3 Autohit D2 [Assault, Slow, Spray, Terrifying 1]}
+\newcommand{\Grenades}[1][5+]{\textbf{Grenades}: R8 A3 {#1} D1 [Area Effect, Assault, Suppressive 0]}
+\newcommand{\HeavyFlamethrower}{\textbf{Heavy Flamethrower}: R8 A5 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\MagmaGun}[1][4+]{\textbf{Magma Gun}: R8 {#1} D8 [Critical 8+, Deadly 2D5, Slow]}
+\newcommand{\MagmaPistols}[1][5+]{\textbf{Magma Pistols}: R4 A2 {#1} D8 [Assault, Critical 8+, Deadly 2D5, Slow]}
+\newcommand{\MissileLauncher}[1][4+]{\textbf{Missile Launcher}: R40 {#1} D6 [Deadly D10, Slow] or R40 A4 {#1} D1 [Area Effect, Slow]}
+\newcommand{\FlamePistols}{\textbf{Flame Pistols}: R6 A5 Autohit D2 [Assault, Slow, Spray, Terrifying 1]}
+\newcommand{\SniperRifle}[1][3+]{\textbf{Sniper Rifle}: R30 {#1} D6 [Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]}
+\newcommand{\StormRifle}[1][5+]{\textbf{Storm Rifle}: R20 A2 {#1} D2 [Assault]}
+
+
+
+% Sometimes handheld, sometimes vehicle-borne
+\newcommand{\GatlingGun}[1][4+]{\textbf{Gatling Gun}: R20 A3 {#1} D4 [Suppressive 2]}
+\newcommand{\HeavyBattleRifle}[1][4+]{\textbf{Heavy Battle Rifle}: R30 A2 {#1} D3 [Suppressive 1]}
+\newcommand{\LaserCannon}[1][4+]{\textbf{Laser Cannon}: R40 {#1} D8 [Critical 9+, Deadly D10, Slow]}
+\newcommand{\MagmaCannon}[1][4+]{\textbf{Magma Cannon}: R16 {#1} D8 [Critical 8+, Deadly 2D5, Slow]}
+\newcommand{\PlasmaCannon}[1][4+]{\textbf{Plasma Cannon}: R30 A3 {#1} D6, [Area Effect, Deadly 2, Unstable 1]}
+
+
+
+
+% Vehicle-borne
+\newcommand{\Autocannon}[1][3+]{\textbf{Autocannon}: R30 A2 {#1} D4 [Deadly 2, Slow]}
+\newcommand{\FragLauncher}[1][4+]{\textbf{Frag Launcher}: R20 A6 {#1} D1 [Area Effect, Slow]}
+\newcommand{\RocketArtillery}[1][4+]{\textbf{Rocket Artillery}: R10-40 A8 {#1} D2 [Area Effect, Indirect Fire, Slow, Suppressive 1]}
+
+
+\newcommand{\SiegeCannon}[1][3+]{\textbf{Siege Cannon} R4-20 A8 {#1} D8 [Area Effect, Deadly D5+3, Slow, Terrifying 1]}
+\newcommand{\TankGun}[1][5+]{\textbf{Tank Gun}: R8-40 A6 {#1} D5, [Area Effect, Deadly 2]}
+\newcommand{\TwinAutocannon}[1][3+]{\textbf{Twin Autocannon}: R30 A4 {#1} D4 [Deadly 2, Slow]}
+\newcommand{\TwinGatlingGun}[1][3+]{\textbf{Twin Gatling Gun}: R20 A8 {#1} D3 [Suppressive 2]}
+\newcommand{\TwinHeavyBattleRifle}[1][3+]{\textbf{Twin Heavy Battle Rifle}: R30 A4 {#1} D3 [Suppressive 1]}
+
+\newcommand{\TwinHeavyFlamethrower}{\textbf{Twin Heavy Flamethrower}: R8 A10 Autohit D2 [Assault, Slow, Spray, Terrifying 2]}
+\newcommand{\TwinLaserCannon}[1][3+]{\textbf{Twin Laser Cannon}: R40 A2 {#1} D8 [Critical 9+, Deadly D10, Slow]}
+
+
+
+
+
+\section*{Army-specific rules}
+
+
+
+\subsection*{Orders}
+
+\subsubsection*{Thunderous Assault:} During the target unit's next activation, it may fire its weapons at the end of Move actions as if they all had the \textit{Assault} rule. All weapons that already have the \textit{Assault} rule benefit from +1 shoot.
+
+
+
+\subsection*{Powers}
+
+Mystic units gain the following additional power:
+
+\subsubsection*{Anguish:} Target an enemy unit within 20''. That unit suffers -3 Will for the duration of the battle round.
+
+
+\pagebreak
+
+
+
+\begin{small}
+
+\section*{Command}
+\input{army_list_table.tex}
+
+
+% Unit
+Centurion
+&
+% Cost
+70
+&
+% Move
+5
+&
+% Will
+3+
+&
+% Life
+3+
+&
+% Weapons
+\BattlePistol[3+]
+
+\BattleRifle[3+]
+
+\Grenades[4+]
+
+Pick one:
+\begin{itemize}
+    \item \EnergySwordLeader
+    \item \EnergyFistLeader
+\end{itemize}
+
+&
+% Special rules
+Acute Senses
+
+Hardened
+
+Leadership 3
+
+Stubborn 1
+
+Tough 3
+&
+% Upgrades
++10 points: Replace Battle Pistol with \PlasmaPistol[3+]
+
+\hrulefill
+
+May replace its Battle Rifle with a \StormRifle[4+] and add one of the following:
+\begin{itemize}
+    \item +20 points: Hulk armor (Life improved to 1+, Move reduced to 4, gain \textit{Bulky 2} rule
+    \item +30 points: Combat bike (Life improved to 2+, Move increased to 12, \textit{Tough} increased to 4, gain \textit{Bulky 5} rule)
+\end{itemize}
+
+
+
+
+\\
+
+
+
+
+% Unit
+Zealot
+&
+% Cost
+70
+&
+% Move
+5
+&
+% Will
+3+
+&
+% Life
+&
+% Weapons
+\BattlePistol[3+]
+
+\Grenades[4+]
+
+Pick one:
+\begin{itemize}
+    \item \EnergySwordLeader
+    \item \EnergyFistLeader
+\end{itemize}
+&
+% Special rules
+Hardened
+
+Leadership 1
+
+Stubborn 1
+
+Support(Fearless)
+
+Tough 3
+&
+% Upgrades
++10 points: Replace Battle Pistol with \PlasmaPistol[3+]
+
+\hrulefill
+
+May add a \StormRifle[4+] and one of the following:
+\begin{itemize}
+    \item +20 points: Hulk armor (Life improved to 1+, Move reduced to 4, gain \textit{Bulky 2} rule
+    \item +30 points: Combat bike (Life improved to 2+, Move increased to 12, \textit{Tough} increased to 4, gain \textit{Bulky 5} rule
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Mystic
+&
+% Cost
+80
+&
+% Move
+5
+&
+% Will
+3+
+&
+% Life
+3+
+&
+% Weapons
+\BattlePistol[3+]
+
+\Grenades[4+]
+
+Pick one:
+\begin{itemize}
+    \item \EnergySwordLeader
+    \item \EnergyFistLeader
+\end{itemize}
+&
+% Special rules
+Caster
+
+Hardened
+
+Leadership 1
+
+Stubborn 1
+
+Tough 3
+&
+% Upgrades
++10 points: Replace Battle Pistol with \PlasmaPistol[3+]
+
+\hrulefill
+
+May add a \StormRifle[4+] and one of the following:
+\begin{itemize}
+    \item +20 points: Hulk armor (Life improved to 1+, Move reduced to 4, gain \textit{Bulky 2} rule
+    \item +30 points: Combat bike (Life improved to 2+, Move increased to 12, \textit{Tough} increased to 4, gain \textit{Bulky 5} rule
+\end{itemize}
+
+\end{longtable}
+
+
+
+
+
+
+
+
+\section*{Support}
+\input{army_list_table.tex}
+
+% Unit
+Technomancer
+&
+% Cost
+60 each
+&
+% Move
+5
+&
+% Will
+4+
+&
+% Life
+3+
+&
+% Weapons
+\BattleRifle
+
+\EnergySword
+
+\EnergyFist
+&
+% Special rules
+Acute Senses
+
+Hardened
+
+Repair 4+
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
++30 points: Add a \StormRifle[4+] and  Combat bike (Life improved to 2+, Move increased to 12, \textit{Tough} increased to 3, gain \textit{Bulky 5} rule
+
+\hrulefill
+
++10 points: Replace its Battle Rifle with a \PlasmaPistol[3+]
+
+
+
+
+\\
+\end{longtable}
+
+
+
+
+
+
+
+\section*{Spearhead}
+\input{army_list_table.tex}
+
+% Unit
+Infiltrators (5-10)
+&
+% Cost
+22 each
+&
+% Move
+6
+&
+% Will
+4+
+&
+% Life
+4+
+&
+% Weapons
+Pick one:
+\begin{itemize}
+    \item \BattleRifle
+    \item \CombatShotgun
+    \item \Sword
+\end{itemize}
+
+\BattlePistol
+
+\Grenades
+
+\DemoCharges
+&
+% Special rules
+Acute Senses
+
+Ambush
+
+Hardened
+
+Pathfinder
+
+Scouts
+
+Stealth 1
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
++10 points: One model in the unit may replace its Sword with one of the following:
+\begin{itemize}
+     \item \EnergyFist
+     \item \EnergySword
+\end{itemize}
+
+\hrulefill
+
++5 points: Any model may replace its Battle Rifle or Combat Shotgun with a \SniperRifle
+
+\hrulefill
+
+One model may replace its Battle Rifle or Combat Shotgun with one of the following:
+\begin{itemize}
+     \item +10 points: \HeavyBattleRifle
+     \item +10 points: \HeavyFlamethrower
+     \item +20 points: \MissileLauncher
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Veterans (5-10)
+&
+% Cost
+25 each
+&
+% Move
+5
+&
+% Will
+3+
+&
+% Life
+3+
+&
+% Weapons
+\BattleRifleMulti
+
+\Grenades[4+]
+
+\CombatKnife[3+]
+&
+% Special rules
+Hardened
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
++10 points: One model in the unit may replace its Combat Knife with one of the following:
+\begin{itemize}
+     \item \EnergyFist[4+]
+     \item \EnergySword[3+]
+\end{itemize}
+
+Free: That model may also replace its Battle Rifle with a \PlasmaPistol[3+]
+
+\hrulefill
+
++5 points each: One model in 5 may replace its Battle Rifle with one of the following:
+\begin{itemize}
+     \item \Flamethrower
+     \item \PlasmaRifle[3+]
+     \item \MagmaGun[3+]
+\end{itemize}
+
+
+
+\\
+\end{longtable}
+
+
+
+
+
+
+
+
+\section*{Troops}
+\input{army_list_table.tex}
+
+
+% Unit
+Legionnaires (5-10)
+&
+% Cost
+20 each
+&
+% Move
+5
+&
+% Will
+4+
+&
+% Life
+3+
+&
+% Weapons
+\BattleRifle
+
+\Grenades
+
+\CombatKnife
+
+One model replaces its Battle Rifle with one of the following:
+\begin{itemize}
+     \item \Flamethrower
+     \item \PlasmaRifle
+     \item \MagmaGun
+\end{itemize}
+
+&
+% Special rules
+Hardened
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
++10 points: One model in the unit may replace its Combat Knife with one of the following:
+\begin{itemize}
+     \item \EnergyFist
+     \item \EnergySword
+\end{itemize}
+
++5 points: That model may also replace its Battle Rifle with a \PlasmaPistol[3+]
+
+
+\hrulefill
+
+If the unit numbers 10 models, one may replace its Battle Rifle with one of the following:
+\begin{itemize}
+     \item +10 points: \HeavyBattleRifle
+     \item +30 points: \MissileLauncher
+     \item +30 points: \PlasmaCannon
+     \item +30 points: \MagmaCannon
+     \item +30 points: \LaserCannon
+\end{itemize}
+
+\end{longtable}
+
+
+
+
+
+
+
+\section*{Fast}
+\input{army_list_table.tex}
+
+
+% Unit
+Bikers (3-10)
+&
+% Cost
+30 each
+&
+% Move
+10
+&
+% Will
+4+
+&
+% Life
+2+
+&
+% Weapons
+\StormRifle
+
+\Grenades
+&
+% Special rules
+Bulky 5
+
+Hardened
+
+Pathbound
+
+Stubborn 1
+
+Tough 3
+&
+% Upgrades
++10 points each: One model in 3 may add one of the following:
+\begin{itemize}
+     \item \Flamethrower
+     \item \PlasmaRifle
+     \item \MagmaGun
+\end{itemize}
+
+\hrulefill
+
++10 points: One model in the unit may add one of the following:
+\begin{itemize}
+     \item \EnergyFist
+     \item \EnergySword
+\end{itemize}
+
++10 points: That model may also add a \PlasmaPistol
+
+
+
+\\
+
+
+
+% Unit
+Heavy Bikes (1-3)
+&
+% Cost
+45 each
+&
+% Move
+10
+&
+% Will
+4+
+&
+% Life
+2+
+&
+% Weapons
+\StormRifle
+
+\HeavyBattleRifle
+&
+% Special rules
+
+Hardened
+
+Pathbound
+
+Stubborn 1
+
+Tough 5
+&
+% Upgrades
++20 points: Replace Heavy Battle Rifle with \MagmaCannon
+
+
+
+\\
+
+
+
+% Unit
+Gladiators (3-10)
+&
+% Cost
+18 each
+&
+% Move
+5
+&
+% Will
+4+
+&
+% Life
+3+
+&
+% Weapons
+\BattlePistol
+
+\Sword
+
+\Grenades
+&
+% Special rules
+Bulky 2
+
+Hardened
+
+Stubborn 1
+
+Tough 2
+
+Can be a scoring unit
+&
+% Upgrades
++5 points each: every model may have Jump Packs (Move increased to 10 and gain the \textit{Jump} and \textit{Bulky} rules)
+
+\hrulefill
+
++5 points each: any model may replace its Battle Pistol and Sword with a \StormRifle
+
+\hrulefill
+
++10 points: One model in the unit may replace its Sword with one of the following:
+\begin{itemize}
+     \item \EnergyFist
+     \item \EnergySword
+\end{itemize}
+
++10 points: That model may also replace its Battle Pistol with a \PlasmaPistol
+
+\hrulefill
+
++10 points each: One model in 5 may replace its Battle Pistol with one of the following
+\begin{itemize}
+    \item \Flamethrower
+    \item \MagmaGun
+\end{itemize}
+
+
+
+
+\\
+
+
+
+
+% Unit
+Speeders (1-3)
+&
+% Cost
+60 each
+&
+% Move
+12
+&
+% Will
+4+
+&
+% Life
+2+
+&
+% Weapons
+\HeavyBattleRifle[3+]
+
+&
+% Special rules
+Hardened
+
+Flying
+
+Open
+
+Tough 6
+
+Transport 5 (Units cannot be split between multiple Speeders)
+
+Vehicle 8+
+&
+% Upgrades
++20 points: Replace Heavy Battle Rifle with \MagmaCannon[3+]
+
+\hrulefill
+
+Replace \textit{Transport 5} rule with one of the following:
+\begin{itemize}
+    \item +20 points: A second \HeavyBattleRifle[3+]
+    \item +20 points: \HeavyFlamethrower
+    \item +20 points: \GatlingGun[3+]
+    \item +30 points: \MissileLauncher[3+]
+\end{itemize}
+
+
+
+\end{longtable}
+
+
+
+
+
+
+
+
+\section*{Transports}
+\input{army_list_table.tex}
+
+% Unit
+APC
+&
+% Cost
+50
+&
+% Move
+8
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\CrushingTracks
+
+\StormRifle[4+]
+&
+% Special rules
+Acute Senses
+
+Hardened
+
+Pathbound
+
+Tough 7
+
+Transport 11
+
+Vehicle 8+
+
+Vulnerable 1
+&
+% Upgrades
++10 points: Add a second \StormRifle[4+]
+
+\hrulefill
+
++5 points: Add a dozer blade: lose \textit{Pathbound} rule
+
+\hrulefill
+
+Upgrade to Heavy APC: reduce value of \textit{Transport} rule to 6 and add one of the following:
+
+\begin{itemize}
+    \item +30 points: \TwinHeavyBattleRifle
+    \item +30 points: \TwinGatlingGun
+    \item +60 points: \TwinLaserCannon
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Strike Pod
+&
+% Cost
+40
+&
+% Move
+0
+&
+% Will
+6+
+&
+% Life
+2+
+&
+% Weapons
+\StormRifle[4+]
+&
+% Special rules
+Ambush
+
+Hardened
+
+Open
+
+Tough 6
+
+Transport 11
+
+Vehicle 8+
+&
+% Upgrades
++20 points: Replace Storm Rifle with \FragLauncher
+
+\hrulefill
+
+Free: May transport one Assault Walker in lieu of anything else
+
+\end{longtable}
+
+
+
+
+
+
+
+\section*{Heavy}
+\input{army_list_table.tex}
+
+% Unit
+Battle Tank
+&
+% Cost
+90
+&
+% Move
+8
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\CrushingTracks
+
+\Autocannon[2+]
+&
+% Special rules
+Acute Senses
+
+Hardened
+
+Pathbound
+
+Tough 10
+
+Vehicle 8+
+
+Vulnerable 1
+&
+% Upgrades
++10 points: Add a \StormRifle[4+]
+
+\hrulefill
+
++5 points: Add a dozer blade: lose \textit{Pathbound} rule
+
+\hrulefill
+
+Replace Autocannon with one of the following:
+\begin{itemize}
+    \item +10 points: \TwinGatlingGun
+    \item +60 points: \SiegeCannon
+    \item +60 points: \RocketArtillery
+    \item +80 points: \TwinLaserCannon
+\end{itemize}
+
+\hrulefill
+
+Add a pair of any of the following:
+\begin{itemize}
+    \item +30 points: \HeavyBattleRifle[3+]
+    \item +30 points: \HeavyFlamethrower
+    \item +50 points: \LaserCannon[3+]
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Bombardiers (5-10)
+&
+% Cost
+18 each
+&
+% Move
+5
+&
+% Will
+4+
+&
+% Life
+3+
+&
+% Weapons
+\BattleRifle
+
+\Grenades
+
+\CombatKnife
+&
+% Special rules
+Hardened
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
+One out of every 2 models in the unit may replace its Battle Rifle with one of the following:
+\begin{itemize}
+     \item +10 points: \HeavyBattleRifle
+     \item +30 points: \MissileLauncher
+     \item +30 points: \PlasmaCannon
+     \item +30 points: \MagmaCannon
+     \item +30 points: \LaserCannon
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Assault Walker
+&
+% Cost
+130
+&
+% Move
+6
+&
+% Will
+6+
+&
+% Life
+1+
+&
+% Weapons
+\HeavyEnergyFist
+
+\StormRifle[4+]
+
+\GatlingGun[3+]
+
+&
+% Special rules
+Hardened
+
+Tough 10
+
+Vehicle 8+
+
+Vulnerable 1
+&
+% Upgrades
++20 points: Replace any Storm Rifle with one of the following:
+\begin{itemize}
+    \item \HeavyFlamethrower
+    \item \MagmaGun
+\end{itemize}
+
+\hrulefill
+
++30 points: Replace Storm Rifle and Heavy Energy Fist with \MissileLauncher
+
+\hrulefill
+
+Replace Gatling Gun with one of the following:
+\begin{itemize}
+    \item +10 points: \TwinHeavyBattleRifle
+    \item +10 points: \TwinHeavyFlamethrower
+    \item +20 points: \TwinAutocannon
+    \item +20 points: \MagmaCannon[3+]
+    \item +20 points: \PlasmaCannon[3+]
+    \item +30 points: Increase A value of Heavy Energy Fist and add a second \StormRifle[4+]
+    \item +50 points: \TwinLaserCannon
+\end{itemize}
+
+
+
+
+\\
+
+
+
+
+% Unit
+Leviathan Tank
+&
+% Cost
+220
+&
+% Move
+8
+&
+% Will
+6+
+&
+% Life
+0+
+&
+% Weapons
+\CrushingTracks
+
+3x \TwinHeavyBattleRifle
+
+&
+% Special rules
+Acute Senses
+
+Hardened
+
+Tough 16
+
+Transport 12
+
+Vehicle 8+
+&
+% Upgrades
++10 points: Add a \StormRifle[4+]
+
+\hrulefill
+
++40 points: Add a \MagmaCannon[3+]
+
+\hrulefill
+
+Replace two Twin Battle Rifles with two of the following:
+\begin{itemize}
+    \item Free: \TwinHeavyFlamethrower
+    \item +80 points: \TwinLaserCannon
+\end{itemize}
+
+
+
+\\
+
+
+
+% Unit
+Hulks (3-10)
+&
+% Cost
+30 each
+&
+% Move
+4
+&
+% Will
+4+
+&
+% Life
+1+
+&
+% Weapons
+\StormRifle
+
+Pick one:
+
+\begin{itemize}
+     \item \EnergyFist
+     \item \EnergySword
+\end{itemize}
+
+&
+% Special rules
+Ambush
+
+Bulky 2
+
+Hardened
+
+Stubborn 1
+
+Tough 2
+&
+% Upgrades
++10 points: Any model may replace its weapons with one of the following:
+\begin{itemize}
+    \item \FlamePistols
+    \item \MagmaPistols
+\end{itemize}
+
+\hrulefill
+
++10 points: Any model may replace its Storm Rifle with a shield (increase \textit{Tough} rule to 3)
+
+\hrulefill
+
+One model may replace its Storm Rifle with one of the following:
+\begin{itemize}
+    \item +20 points: \HeavyFlamethrower
+    \item +20 points: \GatlingGun
+    \item +30 points: \MissileLauncher
+\end{itemize}
+
+\end{longtable}
+
+\end{small}
+
+
+\end{document}
