@@ -53,26 +53,28 @@ You might enjoy playing as the Planetary Defense Force if you appreciate militar
 \newcommand{\HeavyMachineGunCrewed}[1][6+]{\textbf{Heavy Machine Gun}: R20 {#1} D2 [Crew-Served, Heavy, Rapid  3 Suppressive 1]}
 \newcommand{\HugeCombatShotgun}[1][7+]{\textbf{Huge Combat Shotgun}: R10 {#1} D2 [Assault, Rapid 2]}
 \newcommand{\MagmaGun}[1][6+]{\textbf{Magma Gun}: R8 {#1} D8 [Critical 8+, Deadly 2D5, Slow]}
+\newcommand{\MissileLauncherCrewed}[1][6+]{\textbf{Missile Launcher}: R40 {#1} D6 [Deadly D10, Slow] or R40 {#1} D1 [Area Effect 4, Crew-Served, Heavy, Slow]}
+
 \newcommand{\MortarCrewed}[1][6+]{\textbf{Mortar}: R8-30 {#1} D1 [Area Effect 4, Crew-Served, Heavy, Indirect Fire, Slow, Suppressive 0]}
 \newcommand{\PlasmaRifle}[1][6+]{\textbf{Plasma Rifle}: R20 {#1} D6, [Deadly 2, Unstable 1]}
 \newcommand{\PlasmaPistol}[1][6+]{\textbf{Plasma Pistol}: R10 {#1} D6, [Deadly 2, Unstable 1]}
 \newcommand{\Rifle}[1][6+]{\textbf{Rifle}: R20 {#1}}
-\newcommand{\RocketLauncherCrewed}[1][6+]{\textbf{Rocket Launcher}: R40 {#1} D6 [Crew-Served, Deadly D10, Heavy, Slow]}
 \newcommand{\SniperRifle}[1][5+]{\textbf{Sniper Rifle}: R30 {#1} D6 [Crew-Served, Critical 8+, Deadly 2, Heavy, Sniper, Terrifying 1]}
+
 
 % Vehicle-borne
 \newcommand{\AntiTankCannon}[1][5+]{\textbf{Anti-Tank Cannon}: R8-40 {#1} D8 [Critical 8+, Deadly D10+2, Heavy, Slow]}
 \newcommand{\ArtilleryCannon}[1][5+]{\textbf{Artillery Cannon}: R8-80 {#1} D5 [Area Effect 8, Heavy, Indirect Fire, Slow, Suppressive 1]}
 \newcommand{\Autocannon}[1][5+]{\textbf{Autocannon}: R30 {#1} D4 [Deadly 2, Heavy, Rapid 2, Slow]}
-\newcommand{\AutoGrenadeLauncher}[1][6+]{\textbf{Auto Grenade Launcher}: R30 {#1} D1 [Area Effect 6, Suppressive 1]}
 \newcommand{\GatlingCannon}[1][5+]{\textbf{Gatling Cannon}: R30 {#1} D2 [Heavy, Rapid 7 Suppressive 3]}
 \newcommand{\HeavyFlamethrower}{\textbf{Heavy Flamethrower}: R8 Autohit D2 [Assault, Slow, Spray 5, Terrifying 2]}
 \newcommand{\HeavyMachineGun}[1][5+]{\textbf{Heavy Machine Gun}: R20 {#1} D2 [Heavy, Rapid 3, Suppressive 1]}
 \newcommand{\GiantFlamethrower}{\textbf{Giant Flamethrower}: R10 Autohit D2 [Assault, Slow, Spray 8, Terrifying 2]}
 \newcommand{\LongRangeCannon}[1][5+]{\textbf{Long-Range Cannon}: R8-40 {#1} D5 [Area Effect 6, Deadly 3, Heavy, Slow]}
 \newcommand{\MagmaCannon}[1][5+]{\textbf{Magma Cannon}: R16 {#1} D8 [Critical 8+, Deadly 2D5, Heavy, Slow]}
+\newcommand{\MissileLauncher}[1][5+]{\textbf{Missile Launcher}: R40 {#1} D6 [Deadly D10, Slow] or R40 {#1} D1 [Area Effect 4, Heavy, Slow]}
+
 \newcommand{\PlasmaCannon}[1][5+]{\textbf{Plasma Cannon}: R30 {#1} D6, [Area Effect 3, Deadly 2, Heavy, Unstable 1]}
-\newcommand{\RocketLauncher}[1][5+]{\textbf{Rocket Launcher}: R40 {#1} D6 [Deadly D10, Heavy, Slow]}
 \newcommand{\SiegeCannon}[1][5+]{\textbf{Siege Cannon} R4-20 {#1} D8 [Area Effect 8, Deadly D5+3, Heavy, Slow, Terrifying 1]}
 
 
@@ -361,7 +363,7 @@ Special Weapons Squad (5-10)
 
 \CombatKnife
 
-Half of the models (rounded down) also each have one of the following (you may mix and match):
+Half of the models (rounded down) also each have one of the following special weapons (you may mix and match):
 \begin{itemize}
     \item \Flamethrower
     \item \GrenadeLauncher
@@ -402,6 +404,7 @@ Paratrooper Squad (10)
 \CombatKnife
 
 \Grenades
+
 Two models also each have one of the following (you may mix and match):
 \begin{itemize}
     \item \Flamethrower
@@ -525,7 +528,7 @@ Infantry Squad (10)
 
 One model also has a \HeavyMachineGunCrewed
 
-A different model also has one of the following:
+A different model also has one of the following special weapons:
 \begin{itemize}
     \item \Flamethrower
     \item \GrenadeLauncher
@@ -613,7 +616,7 @@ Tough 2
 
 \hrulefill
 
-+10 points each: Two other models may replace their Carbines with one of the following (you may mix and match):
++10 points each: Two other models may replace their Carbines with one of the following special weapons (you may mix and match):
 \begin{itemize}
     \item \Flamethrower
     \item \GrenadeLauncher
@@ -711,7 +714,8 @@ Vehicle 9+
 
 \hrulefill
 
-+10 points: Replace its weapon with an \AutoGrenadeLauncher{} or a \RocketLauncher
++20 points: Replace ranged weapon with \MissileLauncher
+
 \end{longtable}
 
 
@@ -759,7 +763,7 @@ Vehicle 7+
 Vulnerable 1
 &
 % Upgrades
-+10 points: Replace its weapon with an \AutoGrenadeLauncher
++20 points: Replace Heavy Machine Gun with a \MissileLauncher
 
 \hrulefill
 
@@ -810,7 +814,8 @@ Vehicle 8+
 Vulnerable 1
 &
 % Upgrades
-+10 points: May replace one of its weapons with an \AutoGrenadeLauncher{} or a \RocketLauncher
+
++20 points: Replace one ranged weapon with a \MissileLauncher
 
 \hrulefill
 
@@ -945,18 +950,18 @@ Heavy Weapons Squad (6-10)
 
 \CombatKnife
 
-Half of the models (rounded down) also each have one of the following (you may mix and match):
+Half of the models (rounded down) also each have one of the following heavy weapons (you may mix and match):
 \begin{itemize}
     \item \AutocannonCrewed
     \item \HeavyMachineGunCrewed
     \item \MortarCrewed
-    \item \RocketLauncherCrewed
 \end{itemize}
 &
 % Special rules
 &
 
 % Upgrades
++20 points: Replace any heavy weapon with a \MissileLauncherCrewed
 \end{longtable}
 
 \end{small}
