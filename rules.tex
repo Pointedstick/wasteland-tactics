@@ -149,7 +149,7 @@ Your warriors are represented by painted models. A model's abilities are describ
 \begin{itemize}
     \item \textbf{Move:} Speed across the battlefield in inches.
     \item \textbf{Will:} The die roll needed to perform in stressful situations and cast or resist sorcerous powers.
-    \item \textbf{Life:} The die roll needed to survive being hit by enemy attacks.
+    \item \textbf{Life:} The die roll needed to survive being hit by enemy weapons.
     \item \textbf{Weapons:} The unit's weapons.
     \item \textbf{Special Rules:} Special rules permanently affecting all models in the unit.
 \end{itemize}
@@ -349,10 +349,10 @@ Each failed roll prevents the unit from performing that Advanced Shooting Task, 
 Each targeted unit that has no models in base contact with any friendly units may optionally pass a Will roll to make a Reaction; if the Roll fails, the targeted unit instead gains a Suppression Marker. After any Reactions have been resolved, the Shoot Action ends if no enemy models remain visible and within range.
 
 \subsection*{3. Make Shoot rolls}
-For each model in the shooting unit that can see at least one model in its target enemy unit, choose one of its ranged weapons that is within range and make a number of Shoot rolls equal to the weapon's Attacks characteristic.
+For each model in the shooting unit that can see at least one model in its target enemy unit, choose one of its ranged weapons that is within range and make a Shoot roll; the weapon tells you its chance of hitting.
 
 \subsection*{4. Opponent makes Life rolls}
-For each successful Shoot roll, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon used. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
+If the roll succeeds, the target unit makes a Life roll with a penalty equal to the Damage characteristic of the weapon used. If the unit contains visible models with differing Life characteristics, the owner allocates Life rolls to individual models before rolling.
 
 \subsection*{5. Remove destroyed models}
 For each failed Life roll, a visible model in the unit of its owner's choice is destroyed.
@@ -372,7 +372,7 @@ A unit armed with at least one melee weapon may take a Fight Action to attack en
 Each targeted unit that has no models in base contact with any friendly units may optionally pass a Will roll to make a Reaction; if the Roll fails, the targeted unit instead gains a Suppression Marker. After any Reactions have been resolved, the unit makes a free Move Action during which all of its models are required to move in a straight line directly toward the closest enemy model in a targeted unit. If none of the unit's models end up in base contact with any models in any of the target units, the Fight Action ends.
 
 \subsection*{3. Make Fight rolls}
-For each model that is in base contact with either an enemy model or a friendly model in base contact with an enemy model, choose one of the model's melee weapons and make a number of Fight rolls equal to that weapon's Attacks characteristic, subject to the following modifiers:
+For each model that is in base contact with either an enemy model or a friendly model in base contact with an enemy model, choose one of the model's melee weapons and make a Fight roll (the weapon tells you its chance of hitting), subject to the following modifiers:
 
 \begin{itemize}
     \item +1 bonus for each Suppression Marker on the enemy unit
@@ -450,14 +450,13 @@ This Reaction may only be chosen if the distance between the two units is 15'' a
 
 \chapter{Weapons}
 
-Every model has one or more weapons, each having up to five characteristics, expressed like so:
+Every model has one or more weapons, each having up to four characteristics, expressed like so:
 
 \textbf{Pistol}: R10 5+ D1 [Assault]
 
 \begin{itemize}
     \item \textbf{R[number]:} The weapon's range. If present, it is a ranged weapon; otherwise it is a melee weapon. If there are two numbers, the first one is a minimum range, measured to the farthest model in the target unit.
-    \item \textbf{A[number]:} The weapon's number of attacks. If present, roll this many dice per Shoot or Fight Action when using this weapon. Otherwise roll one die.
-    \item \textbf{[number]+:} The weapon's chance of hitting its target. Each Shoot or Fight roll must be equal to or greater than the number to score a hit. ``Autohit'' means that all of the weapon's attacks automatically hit!
+    \item \textbf{[number]+:} The weapon's chance of hitting its target. Each Shoot or Fight roll must be equal to or greater than the number to score a hit. ``Autohit'' means that the weapon automatically hits!
     \item \textbf{D[number]:} The weapon's damage. If present, subtract this number from Life rolls made by models struck with this weapon.
     \item \textbf{[special rules]:} This weapon's special rules.
 \end{itemize}
@@ -467,17 +466,21 @@ Every model has one or more weapons, each having up to five characteristics, exp
 
 \section*{Special weapon rules}
 
-\subsubsection*{Area Effect/Spray:} This weapon inflicts damage over a wide area. It negates Shoot penalties from firing at units in areas of Concealment or Cover, but its number of attacks is reduced to the number of models in the target unit if it would be higher, and it may not be used in melee combat by models that began the round in base contact with enemy models. If the rule is called ``Spray'', the weapon additionally negates Life bonuses granted by Cover, Defend Actions, and Go to Ground Reactions.
-
 \subsubsection*{Assault:} This weapon can be used effectively on the move at close range. It may be used during a Fight Action as though it were a melee weapon, and once per round, it may be fired for free at the end of a Move Action, exactly as with a Shoot Action.
 
 \subsubsection*{Critical X:} This weapon is capable of dealing terrible damage with a lucky hit. If it would automatically hit, roll anyway. For each die that shows an X or higher, the target fails a life roll automatically, with double the value of the weapon's \textit{Deadly} rule, if it has one. If not, it becomes \textit{Deadly 2}.
 
-\subsubsection*{Deadly X:} This weapon is especially damaging and deals X ``wounds'' to \textit{Tough} models. If it would deal more wounds to a \textit{Tough} model than it has remaining wounds, the excess damage is lost.
+\subsubsection*{Deadly X:} This weapon is especially damaging and each Life roll failed to this weapon deals X ``wounds'' to \textit{Tough} models. If it would deal more wounds to a \textit{Tough} model than it has remaining wounds, the excess damage is lost.
 
 \subsubsection*{Indirect Fire:} When firing this weapon, you may opt to suffer a -2 Shoot penalty and be able to target units that are not visible to its firer, but are visible to and have any models within 15'' of a friendly Spearhead or \textit{Scouts} unit.
 
 \subsubsection*{Heavy:} This weapon requires time to set up and cannot be fired if the wielding model (or a \textit{Transport} it is embarked on) moved at all during this round.
+
+\subsubsection*{Rapid/Area Effect/Spray X:} This weapon inflicts damage over a wide area. If the weapon hits, the target unit must take X Life rolls, not just one.
+
+If the rule is called ``Area Effect'' or ``Spray'', it additionally negates Shoot penalties from firing at units in areas of Concealment or Cover, but X is reduced to the number of models in the target unit if it would be higher, and it may not be used in melee combat by models that began the round in base contact with enemy models.
+
+If the rule is called ``Spray'', the weapon additionally negates Life bonuses granted by Cover, Defend Actions, and Go to Ground Reactions.
 
 \subsubsection*{Slow:} This weapon is slow to reload and may only be used once per round.
 
@@ -573,8 +576,17 @@ Finally, a unit receives a -1 Life penalty when it is the target of a Shoot Acti
 
 If a unit's footprint or elevation is at all ambiguous, err on the side of applying no bonuses or penalties.
 
+
+
+
 \section*{Partially concealed units}
 When a unit targeted with a Shoot action is benefiting from the effects of Concealment or Cover because only a majority and not all of its models are in the terrain area, the shooting unit may optionally focus fire on only the fully visible models. In this case, those models lose their Concealment or Cover bonuses against this attack, but the unit's other models are no longer considered visible at all.
+
+
+
+
+\section*{More granular attacks}
+For \textit{Rapid} weapons, players may choose to roll X dice instead of rolling one die and multiplying it by X if it hits.
 
 
 
