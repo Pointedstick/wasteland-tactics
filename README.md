@@ -1,3 +1,10 @@
+# These aren't the droids you're looking for
+This repo has been migrated to GitLab at https://gitlab.com/Pointedstick/wasteland-tactics.
+
+
+---
+
+
 # The game
 Wasteland tactics is a tabletop wargame simulating the fast-paced randomness and tactical decision-making of a real battlefield.
 
